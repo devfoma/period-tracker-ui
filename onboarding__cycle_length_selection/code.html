@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Onboarding: Cycle Length Selection</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Spline+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ee2b8c",
+                        "background-light": "#f8f6f7",
+                        "background-dark": "#221019",
+                    },
+                    fontFamily: {
+                        "display": ["Spline Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>.floral-pattern-top {
+    position: absolute;
+    top: -20px;
+    right: -20px;
+    width: 200px;
+    height: 200px;
+    opacity: 0.15;
+    background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuDE9l7bXKXo_W_pa_MHnIekSZWD3n6eeWD_wwgBfOnCf-sfDyOZtCWhmSsetQMWm2hXFt1xJ8aosd067w6X0jmT9dyJFmqCIoSWCgJ44xUxci3IG3ofM3kS6AQH0GTdlPv_IenI6I6mIm8mz1baxOKNetMqiho-luf2CnOTDX7myNuoDCLwtid3RBHrBKAHo4uMEZU1cHxNjhvEdSYfJpymW5OnIqcIS8EiCie6r8_Q9h4Ns7osXi2aZlkxjrCWzXUmmh7Aa6kZh-kD);
+    background-size: cover;
+    border-radius: 50%;
+    filter: grayscale(100%) sepia(100%) hue-rotate(290deg) saturate(200%);
+    pointer-events: none
+    }
+.floral-pattern-bottom {
+    position: absolute;
+    bottom: -50px;
+    left: -50px;
+    width: 250px;
+    height: 250px;
+    opacity: 0.1;
+    background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuC4wjXMrpoIJXIG9yohtqTRztH3ohQInoWqEIK6hKNSk4oIr7JN5eYCfxb_zcZHWAuHHrx3djFeeaQe7nVEqobaKFEymflwkBOZL6SEuY3iFos4US4q9cH8s3E_D1RjrKLUd03M9_9JGdvd5mw8oKkAy5RY_S0F8NhB5pjFmopqVuRGQORUMwhWGGwtQkEcuH5k6ysu0vgO-MYu3Xw-fayxiaQ0JOG2fJ4dr3C7I8lnJd8TxbOJf9FHg2qJqX1CddBwZRrPq4i2ZzbR);
+    background-size: cover;
+    border-radius: 50%;
+    filter: grayscale(100%) sepia(100%) hue-rotate(290deg) saturate(200%);
+    pointer-events: none
+    }
+/* Custom Slider Styling */
+input[type=range] {
+    -webkit-appearance: none;
+    width: 100%;
+    background: transparent
+    }
+input[type=range]:focus {
+    outline: none
+    }
+input[type=range]::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 8px;
+    cursor: pointer;
+    background: #e6dbe0;
+    border-radius: 4px
+    }
+input[type=range]::-webkit-slider-thumb {
+    height: 32px;
+    width: 32px;
+    border-radius: 50%;
+    background: #ee2b8c;
+    cursor: pointer;
+    -webkit-appearance: none;
+    margin-top: -12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuCtz4y_Isl6P23MKcxjivvXzvA7dGogzg_nhB-ljZeexSItIfgm2SgSSaWvadQgEWHccAtLb5ZTZ34ft04gBQ8iC7zeu7HbURfkW1h1bdXkDmlNyMrDVWOlIDIve1RbemVDkIEMMJ8zoglnuJmNu8PSUjOx6DwpTbfMHm0SLIfu-LEuBkAg0YlvVLxDz33fV3Foq5Vr906tjJiONEIRA4jWqfOG3IOzQ6Pzo9E2cr0CHK2fmdNSm5p6_TpOvhqGmWZCQgQt42EuIaiN);
+    background-repeat: no-repeat;
+    background-position: center
+    }</style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-display bg-background-light dark:bg-background-dark min-h-screen flex flex-col overflow-x-hidden relative">
+<!-- Decorative Floral Elements -->
+<div class="floral-pattern-top" data-alt="Light organic floral pattern in pink tones"></div>
+<div class="floral-pattern-bottom" data-alt="Faded floral illustration decoration"></div>
+<!-- Top App Bar -->
+<div class="relative flex h-auto w-full flex-col z-10">
+<div class="flex items-center p-4 pb-2 justify-between">
+<button class="text-[#181114] dark:text-white flex size-12 shrink-0 items-center justify-center rounded-full hover:bg-black/5 transition-colors">
+<span class="material-symbols-outlined" style="font-size: 24px;">arrow_back_ios_new</span>
+</button>
+<div class="flex-1 text-center">
+<span class="text-xs font-semibold uppercase tracking-widest text-primary/60">Personalization</span>
+</div>
+<div class="size-12"></div> <!-- Spacer for balance -->
+</div>
+</div>
+<!-- Progress Indicator -->
+<div class="flex w-full flex-row items-center justify-center gap-3 py-5 z-10">
+<div class="h-1.5 w-8 rounded-full bg-primary/20"></div>
+<div class="h-1.5 w-8 rounded-full bg-primary/20"></div>
+<div class="h-1.5 w-8 rounded-full bg-primary/20"></div>
+<div class="h-1.5 w-8 rounded-full bg-primary"></div>
+<div class="h-1.5 w-8 rounded-full bg-primary/20"></div>
+</div>
+<!-- Content Area -->
+<main class="flex-1 flex flex-col px-6 z-10">
+<!-- Headline -->
+<h1 class="text-[#181114] dark:text-white tracking-tight text-[32px] font-bold leading-tight text-center pb-3 pt-6">
+            How long is your cycle usually?
+        </h1>
+<!-- Body Text -->
+<p class="text-[#181114]/70 dark:text-white/70 text-base font-normal leading-normal pb-8 pt-1 text-center max-w-sm mx-auto">
+            Knowing your cycle length helps us predict your fertile window and next period accurately.
+        </p>
+<!-- Value Display -->
+<div class="flex flex-col items-center justify-center py-12">
+<div class="bg-white dark:bg-white/10 shadow-xl shadow-primary/5 rounded-xl px-10 py-6 text-center border border-primary/10">
+<h2 class="text-primary text-[48px] font-bold leading-none tracking-tight">28</h2>
+<span class="text-primary/60 text-lg font-semibold uppercase tracking-wide">Days</span>
+</div>
+</div>
+<!-- Slider Component -->
+<div class="w-full max-w-md mx-auto px-4 py-8">
+<div class="relative pt-1">
+<input class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-primary" max="45" min="21" type="range" value="28"/>
+<div class="flex justify-between text-xs text-[#181114]/40 dark:text-white/40 mt-4 px-1 font-medium">
+<span>21 Days</span>
+<span>30 Days</span>
+<span>45 Days</span>
+</div>
+</div>
+</div>
+<!-- Helper Note -->
+<div class="mt-4 text-center">
+<p class="text-[#181114]/50 dark:text-white/50 text-sm italic">
+                Don't worry, you can always change this later in settings.
+            </p>
+</div>
+</main>
+<!-- Bottom Action -->
+<footer class="p-6 pb-10 z-10">
+<button class="w-full bg-primary hover:bg-primary/90 text-white font-bold text-lg py-5 rounded-full shadow-lg shadow-primary/30 transition-all active:scale-[0.98] flex items-center justify-center gap-2">
+            Continue
+            <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</footer>
+</body></html>

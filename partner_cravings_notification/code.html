@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Partner Cravings Notification</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Spline+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ee2b8c",
+                        "background-light": "#f8f6f7",
+                        "background-dark": "#221019",
+                    },
+                    fontFamily: {
+                        "display": ["Spline Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Spline Sans', sans-serif;
+        }
+        .ios-glass {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+        .dark .ios-glass {
+            background: rgba(34, 16, 25, 0.6);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display min-h-screen flex items-center justify-center p-4">
+<!-- Mobile Frame Simulation -->
+<div class="relative w-full max-w-[390px] h-[844px] bg-white dark:bg-black rounded-[3rem] overflow-hidden shadow-2xl border-[8px] border-gray-800 dark:border-zinc-800">
+<!-- Wallpaper Background -->
+<div class="absolute inset-0 bg-gradient-to-br from-[#fdf2f8] via-[#fbcfe8] to-[#f472b6] dark:from-[#221019] dark:to-[#4d1d31]">
+<div class="absolute inset-0 opacity-40 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-white/40 to-transparent"></div>
+</div>
+<!-- Top App Bar / Status Bar Area -->
+<div class="relative z-10 flex items-center justify-between px-8 pt-4">
+<div class="text-[#181114] dark:text-white font-semibold text-sm">7:42</div>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[18px] text-[#181114] dark:text-white">signal_cellular_4_bar</span>
+<span class="material-symbols-outlined text-[18px] text-[#181114] dark:text-white">wifi</span>
+<span class="material-symbols-outlined text-[22px] text-[#181114] dark:text-white">battery_full</span>
+</div>
+</div>
+<!-- Lock Screen Date/Time -->
+<div class="relative z-10 flex flex-col items-center mt-12 text-[#181114] dark:text-white/90">
+<div class="text-sm font-medium opacity-80">Tuesday, October 24</div>
+<div class="text-7xl font-bold tracking-tight mt-1">7:42</div>
+</div>
+<!-- Notification Center Area -->
+<div class="relative z-10 px-4 mt-12 space-y-3">
+<!-- The Main Cravings Notification -->
+<div class="ios-glass rounded-3xl p-4 shadow-lg border border-white/20">
+<div class="flex items-center justify-between mb-2">
+<div class="flex items-center gap-2">
+<div class="size-6 bg-primary rounded-lg flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-white text-[14px]">favorite</span>
+</div>
+<span class="text-[11px] font-semibold text-[#896175] dark:text-pink-200/70 tracking-wider uppercase">Partner Cravings</span>
+</div>
+<span class="text-[11px] text-[#896175] dark:text-pink-200/50">Just now</span>
+</div>
+<div class="flex gap-3">
+<div class="flex-1">
+<p class="text-primary font-bold text-[15px] leading-tight mb-0.5">Cravings Alert! 🍩</p>
+<p class="text-[#181114] dark:text-white/90 text-[14px] leading-snug">
+                            Sarah has a craving for something sweet. Time to be a hero? ❤️
+                        </p>
+</div>
+<div class="size-14 rounded-xl bg-cover bg-center shrink-0 border border-white/10" data-alt="A delicious pink glazed donut with colorful sprinkles" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDEUOWWpZSIJ5aINmHqhNOMAMcQo-NlKn57CnlD-_h5x8F3nJlqpsaCVLmPgnzC7fYnDTnikgqnI_4y19utgMS7m9mGut2WCJJRc9WIvCG0qk_06zk3gfYsc0cYILJF8e7_z523t8w7rntXn7I5NykzcREWc_qyhzH0aD9MIRWxY5sBzYfL8dIDTTy-0ypnE1DbdcZI7FlJEb8N4GJhDTHbx6Kn5oPXuKkMTsB9vzCC_wau5rb8JNu24aPjqV9GrHCFUqsmALi9UTmv");'>
+</div>
+</div>
+</div>
+<!-- Subtle secondary notification placeholder -->
+<div class="ios-glass rounded-3xl p-4 shadow-lg border border-white/20 opacity-60 scale-95 origin-top">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="size-6 bg-gray-400 rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-[14px]">calendar_today</span>
+</div>
+<span class="text-[11px] font-semibold text-[#896175] dark:text-pink-200/70 tracking-wider uppercase">Calendar</span>
+</div>
+<span class="text-[11px] text-[#896175] dark:text-pink-200/50">2h ago</span>
+</div>
+</div>
+</div>
+<!-- Bottom Quick Actions -->
+<div class="absolute bottom-12 left-0 right-0 z-10 flex justify-between px-10">
+<button class="size-12 rounded-full ios-glass flex items-center justify-center text-[#181114] dark:text-white border border-white/10">
+<span class="material-symbols-outlined">flashlight_on</span>
+</button>
+<button class="size-12 rounded-full ios-glass flex items-center justify-center text-[#181114] dark:text-white border border-white/10">
+<span class="material-symbols-outlined">photo_camera</span>
+</button>
+</div>
+<!-- Home Indicator / Swipe Up -->
+<div class="absolute bottom-2 left-0 right-0 flex flex-col items-center gap-2">
+<div class="text-[#181114]/60 dark:text-white/40 text-[13px] font-medium">Swipe up to open</div>
+<div class="w-32 h-1.5 bg-[#181114]/20 dark:bg-white/30 rounded-full mb-2"></div>
+</div>
+<!-- Decorative Floating Elements for Theme -->
+<div class="absolute top-1/4 -right-10 w-40 h-40 bg-primary/10 rounded-full blur-3xl"></div>
+<div class="absolute bottom-1/4 -left-10 w-40 h-40 bg-pink-300/20 rounded-full blur-3xl"></div>
+</div>
+</body></html>

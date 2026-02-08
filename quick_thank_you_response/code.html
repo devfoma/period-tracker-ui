@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Quick Thank You Response</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ee2b8c",
+                        "background-light": "#f8f6f7",
+                        "background-dark": "#221019",
+                    },
+                    fontFamily: {
+                        "display": ["Spline Sans"]
+                    },
+                    borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .ios-blur {
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display">
+<!-- Screen Container (Simulating Phone View) -->
+<div class="relative flex h-screen w-full max-w-[430px] mx-auto flex-col bg-white overflow-hidden shadow-2xl border-x border-gray-100">
+<!-- Mock Background Screen (Gift Reveal) -->
+<div class="absolute inset-0 flex flex-col items-center justify-center bg-pink-50 dark:bg-zinc-900 p-8 text-center">
+<div class="w-48 h-48 bg-primary/10 rounded-full flex items-center justify-center mb-6 border-4 border-dashed border-primary/30">
+<span class="material-symbols-outlined text-primary text-8xl">card_giftcard</span>
+</div>
+<h1 class="text-2xl font-bold text-gray-800 dark:text-gray-100 mb-2">You opened a gift!</h1>
+<p class="text-gray-500 dark:text-gray-400">Someone sent you 100 bonus crystals to track your cycle in style.</p>
+</div>
+<!-- Dimmed/Blurred Overlay -->
+<div class="absolute inset-0 bg-black/40 ios-blur flex flex-col justify-end">
+<!-- Modal Content -->
+<div class="bg-white dark:bg-zinc-900 rounded-t-[3rem] p-6 pb-12 shadow-2xl animate-in slide-in-from-bottom duration-500">
+<!-- BottomSheetHandle Component -->
+<div class="flex flex-col items-stretch mb-4">
+<button class="flex h-5 w-full items-center justify-center">
+<div class="h-1.5 w-12 rounded-full bg-[#e6dbe0] dark:bg-zinc-700"></div>
+</button>
+</div>
+<!-- SectionHeader Component -->
+<div class="mb-4">
+<h4 class="text-primary text-lg font-bold leading-normal tracking-tight px-4 py-2 text-center uppercase">Say thanks! ✨</h4>
+</div>
+<!-- ButtonGroup Component (Customized for emojis/girly theme) -->
+<div class="flex justify-center mb-4">
+<div class="flex flex-col w-full gap-3 px-2">
+<div class="flex gap-2">
+<button class="flex flex-1 min-w-[100px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-14 px-4 bg-primary/10 text-primary border-2 border-primary/20 hover:bg-primary/20 transition-all active:scale-95">
+<span class="text-sm font-bold flex items-center gap-2">
+<span class="text-xl">💋</span> Love you!
+                                </span>
+</button>
+<button class="flex flex-1 min-w-[100px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-14 px-4 bg-primary/10 text-primary border-2 border-primary/20 hover:bg-primary/20 transition-all active:scale-95">
+<span class="text-sm font-bold flex items-center gap-2">
+<span class="text-xl">💖</span> You're the best!
+                                </span>
+</button>
+</div>
+<!-- SingleButton Component Integration -->
+<button class="flex w-full cursor-pointer items-center justify-center overflow-hidden rounded-full h-14 px-4 bg-primary/10 text-primary border-2 border-primary/20 hover:bg-primary/20 transition-all active:scale-95">
+<span class="text-sm font-bold flex items-center gap-2">
+<span class="text-xl">😊</span> This made my day!
+                            </span>
+</button>
+</div>
+</div>
+<div class="px-2 py-4 flex items-center gap-2 border-t border-gray-100 dark:border-zinc-800">
+<!-- TextField Component Integration -->
+<div class="flex flex-1 items-end gap-2">
+<label class="flex flex-col flex-1">
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-full text-gray-800 dark:text-gray-100 focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-[#e6dbe0] dark:border-zinc-700 bg-white dark:bg-zinc-800 h-14 placeholder:text-[#896175] dark:placeholder:text-zinc-500 px-6 text-base font-normal leading-normal" placeholder="Write a sweet note..." value=""/>
+</label>
+</div>
+<!-- Send Button -->
+<button class="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-primary text-white shadow-lg shadow-primary/30 active:scale-90 transition-transform">
+<span class="material-symbols-outlined fill-1">send</span>
+</button>
+</div>
+<!-- Footer spacing for iOS home indicator -->
+<div class="h-6"></div>
+</div>
+</div>
+<!-- Decorative elements for girly theme -->
+<div class="absolute top-12 left-8 pointer-events-none opacity-20">
+<span class="material-symbols-outlined text-primary text-4xl">favorite</span>
+</div>
+<div class="absolute top-24 right-12 pointer-events-none opacity-20 rotate-12">
+<span class="material-symbols-outlined text-primary text-2xl">auto_awesome</span>
+</div>
+<div class="absolute bottom-1/2 left-4 pointer-events-none opacity-10">
+<span class="material-symbols-outlined text-primary text-6xl">colors_spark</span>
+</div>
+</div>
+</body></html>

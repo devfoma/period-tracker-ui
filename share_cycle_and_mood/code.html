@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Share My Cycle</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f04299",
+                        "background-light": "#fdf8fa",
+                        "background-dark": "#221019",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-[#181114] dark:text-white min-h-screen">
+<!-- Top Navigation Bar -->
+<div class="sticky top-0 z-50 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md">
+<div class="flex items-center p-4 pb-2 justify-between">
+<div class="text-[#181114] dark:text-white flex size-12 shrink-0 items-center justify-center cursor-pointer">
+<span class="material-symbols-outlined" style="font-size: 24px;">arrow_back_ios</span>
+</div>
+<h2 class="text-[#181114] dark:text-white text-lg font-bold leading-tight tracking-tight flex-1 text-center pr-12">Share My Cycle</h2>
+</div>
+</div>
+<main class="max-w-md mx-auto pb-24">
+<!-- Header Text Section -->
+<div class="px-4 pt-4">
+<h3 class="text-[#181114] dark:text-white tracking-tight text-2xl font-bold leading-tight">Shared Partners</h3>
+<p class="text-[#896175] dark:text-pink-200/60 text-sm mt-1">Keep your loved ones in the loop with your cycle updates.</p>
+</div>
+<div class="h-6"></div>
+<!-- Partner Cards Container -->
+<div class="space-y-4 px-4">
+<!-- Active Partner 1 -->
+<div class="rounded-xl bg-white dark:bg-[#2d1622] p-4 shadow-sm border border-primary/10">
+<div class="flex items-center gap-4 mb-4">
+<div class="size-14 rounded-full bg-cover bg-center border-2 border-primary/20" data-alt="Profile photo of a smiling man" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCa0ptyvV4z_MDI7dS4lBSf0eghnILm4x_o9wjMhEdlKbw0MILG2chJgfP27tE3xjpOaNcD10V0nTyUGpLNHJp_2Ow00vJ2M_G9ZgQ9DbX8PBOOnvQMhHZwuZNCydgK4BYn8HMo5AG4IVrKvnxnlMTNZyqR4Jgdo5uzWTvmPD_HfNaSIslAM0SSIopHgrN3llvGYkIQKVm4Mir_jBZH869k8du7Yf3EcJKfppuvdz4mXmPBfp0pqCHjqM-Ld7lRajoS04hfH8Q5qbxt");'>
+</div>
+<div class="flex flex-col flex-1">
+<p class="text-[#181114] dark:text-white text-lg font-bold">John Doe</p>
+<p class="text-primary text-xs font-semibold uppercase tracking-wider">Partner</p>
+</div>
+<button class="text-[#896175] dark:text-pink-200/40">
+<span class="material-symbols-outlined">settings</span>
+</button>
+</div>
+<div class="space-y-2">
+<!-- Mood Sharing Toggle -->
+<div class="flex items-center gap-4 bg-background-light dark:bg-background-dark/40 px-3 py-3 rounded-lg justify-between">
+<div class="flex items-center gap-3">
+<div class="text-primary flex items-center justify-center rounded-lg bg-primary/10 shrink-0 size-9">
+<span class="material-symbols-outlined" style="font-size: 20px;">favorite</span>
+</div>
+<p class="text-[#181114] dark:text-white text-sm font-medium">Mood Sharing</p>
+</div>
+<div class="shrink-0">
+<label class="relative flex h-[28px] w-[48px] cursor-pointer items-center rounded-full border-none bg-gray-200 dark:bg-gray-700 p-0.5 has-[:checked]:justify-end has-[:checked]:bg-primary">
+<div class="h-full w-[24px] rounded-full bg-white shadow-md"></div>
+<input checked="" class="invisible absolute" type="checkbox"/>
+</label>
+</div>
+</div>
+<!-- Period Alerts Toggle -->
+<div class="flex items-center gap-4 bg-background-light dark:bg-background-dark/40 px-3 py-3 rounded-lg justify-between">
+<div class="flex items-center gap-3">
+<div class="text-primary flex items-center justify-center rounded-lg bg-primary/10 shrink-0 size-9">
+<span class="material-symbols-outlined" style="font-size: 20px;">notifications_active</span>
+</div>
+<p class="text-[#181114] dark:text-white text-sm font-medium">Period Alerts</p>
+</div>
+<div class="shrink-0">
+<label class="relative flex h-[28px] w-[48px] cursor-pointer items-center rounded-full border-none bg-gray-200 dark:bg-gray-700 p-0.5 has-[:checked]:justify-end has-[:checked]:bg-primary">
+<div class="h-full w-[24px] rounded-full bg-white shadow-md"></div>
+<input checked="" class="invisible absolute" type="checkbox"/>
+</label>
+</div>
+</div>
+</div>
+</div>
+<!-- Empty Slot 2 -->
+<div class="rounded-xl border-2 border-dashed border-primary/20 p-6 flex flex-col items-center justify-center text-center gap-2 bg-white/40 dark:bg-white/5">
+<div class="size-12 rounded-full bg-primary/5 flex items-center justify-center text-primary/40">
+<span class="material-symbols-outlined" style="font-size: 32px;">person_add</span>
+</div>
+<div>
+<p class="text-[#181114] dark:text-white font-semibold">Empty Slot</p>
+<p class="text-[#896175] dark:text-pink-200/40 text-xs">Invite another close friend or family member</p>
+</div>
+</div>
+<!-- Empty Slot 3 -->
+<div class="rounded-xl border-2 border-dashed border-primary/20 p-6 flex flex-col items-center justify-center text-center gap-2 bg-white/40 dark:bg-white/5 opacity-60">
+<div class="size-12 rounded-full bg-primary/5 flex items-center justify-center text-primary/40">
+<span class="material-symbols-outlined" style="font-size: 32px;">person_add</span>
+</div>
+<div>
+<p class="text-[#181114] dark:text-white font-semibold">Empty Slot</p>
+<p class="text-[#896175] dark:text-pink-200/40 text-xs">Invite another person</p>
+</div>
+</div>
+</div>
+<!-- Invite Button -->
+<div class="fixed bottom-8 left-0 right-0 px-6 max-w-md mx-auto">
+<button class="w-full bg-primary hover:bg-primary/90 text-white font-bold py-4 rounded-full shadow-lg shadow-primary/30 flex items-center justify-center gap-2 transition-transform active:scale-95">
+<span class="material-symbols-outlined">add_circle</span>
+                Invite New Person
+            </button>
+<p class="text-center text-[10px] text-[#896175] dark:text-pink-200/40 mt-4 px-8 leading-tight">
+                Your health data is private. Partners can only see what you choose to share and you can revoke access at any time.
+            </p>
+</div>
+</main>
+</body></html>

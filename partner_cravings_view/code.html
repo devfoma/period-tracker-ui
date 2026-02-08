@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Partner Cravings View</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Spline+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ee2b8c",
+                        "background-light": "#fdf8fa",
+                        "background-dark": "#221019",
+                    },
+                    fontFamily: {
+                        "display": ["Spline Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: "Spline Sans", sans-serif;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark min-h-screen text-[#181114] dark:text-white">
+<!-- Top Navigation Bar -->
+<nav class="sticky top-0 z-50 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md px-4 py-4 flex items-center justify-between border-b border-primary/10">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">arrow_back_ios_new</span>
+</div>
+<div>
+<h1 class="text-xl font-bold leading-tight tracking-tight">Sarah's Cravings</h1>
+<p class="text-xs text-primary/70 font-medium">Cycle Day 24 • Luteal Phase</p>
+</div>
+</div>
+<button class="w-10 h-10 rounded-full bg-white dark:bg-gray-800 shadow-sm flex items-center justify-center border border-primary/5">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">favorite</span>
+</button>
+</nav>
+<main class="pb-24">
+<!-- Hero Section: Top Craving -->
+<section class="p-4 @container">
+<div class="relative overflow-hidden flex flex-col items-stretch justify-start rounded-xl shadow-lg bg-white dark:bg-gray-900 border-2 border-primary/20">
+<div class="absolute top-4 left-4 z-10">
+<span class="bg-primary text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-widest shadow-sm">Urgent</span>
+</div>
+<div class="w-full bg-center bg-no-repeat aspect-[16/10] bg-cover" data-alt="Delicious gooey double chocolate brownie with walnuts" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBMgtess_xsROQbHK9bmhwJeIF3WSc33gAgoqj99XJcxr0sRdzhNDYa1llwbmG7kCDrU9wtMMsZoYPd8ZF0bhSRyBpftNzValkovRbaQFtczKdqvAC4Q7f56vndbUHTunznPCAtc0_35xMf1CqNMFJ3_CveHXdG5ydlxNchB5q0swrPqtlItkHkpa5Y6ihbCpVe45GGM57lqCv4-DW-sFlQ941E4EvOhAHDg6GjEepgiWT9CRh8LFPvFU_MjYRvhBth5cSyD9indCtJ");'>
+</div>
+<div class="flex w-full min-w-72 grow flex-col items-stretch justify-center gap-2 py-5 px-5">
+<div class="flex justify-between items-start">
+<div>
+<p class="text-primary text-sm font-semibold leading-normal">Current Top Craving</p>
+<h2 class="text-[#181114] dark:text-white text-2xl font-bold leading-tight tracking-tight">Double Chocolate Brownie</h2>
+</div>
+<div class="bg-primary/10 p-2 rounded-full">
+<span class="material-symbols-outlined text-primary">bakery_dining</span>
+</div>
+</div>
+<div class="mt-4 flex flex-col sm:flex-row gap-3">
+<button class="flex-1 flex cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 px-6 bg-primary text-white text-base font-bold shadow-md hover:bg-primary/90 transition-colors">
+<span class="material-symbols-outlined mr-2">shopping_cart</span>
+<span class="truncate">I'm on it!</span>
+</button>
+<button class="flex items-center justify-center rounded-full h-12 w-12 bg-background-light dark:bg-gray-800 text-primary border border-primary/20">
+<span class="material-symbols-outlined">map</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Section Header -->
+<div class="flex items-center justify-between px-6 pt-4 pb-2">
+<h3 class="text-[#181114] dark:text-white text-lg font-bold leading-tight tracking-tight">Other Cravings</h3>
+<span class="text-xs font-medium text-primary/60 uppercase tracking-widest">3 Items</span>
+</div>
+<!-- Cravings List -->
+<div class="px-4 space-y-4">
+<!-- Card 1: Salt & Vinegar Chips -->
+<div class="p-4 bg-white dark:bg-gray-900 rounded-xl shadow-sm border border-primary/5">
+<div class="flex items-stretch justify-between gap-4">
+<div class="flex flex-[2_2_0px] flex-col justify-between py-1">
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-2">
+<p class="text-[#181114] dark:text-white text-lg font-bold leading-tight">Salt &amp; Vinegar Chips</p>
+<span class="material-symbols-outlined text-orange-400 text-sm">potted_plant</span>
+</div>
+<p class="text-[#896175] dark:text-gray-400 text-sm font-normal leading-normal">A salty snack for movie night tonight</p>
+</div>
+<div class="flex gap-2 mt-4">
+<button class="flex items-center justify-center rounded-full h-10 px-4 bg-primary/10 text-primary text-sm font-bold border border-primary/10">
+<span class="truncate">I'll get it</span>
+</button>
+<button class="flex items-center justify-center rounded-full h-10 px-4 bg-[#f4f0f2] dark:bg-gray-800 text-[#181114] dark:text-white gap-2 text-sm font-medium">
+<span class="material-symbols-outlined text-[18px]">location_on</span>
+<span class="truncate">Find Nearby</span>
+</button>
+</div>
+</div>
+<div class="w-32 h-32 bg-center bg-no-repeat bg-cover rounded-xl" data-alt="Open bag of crunchy potato chips" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDW83S3OwFZU_essJsBaRyqLowwo7fkElJ8coplGULfUQaO0e63mdLO93eIb-Uk6cVNO7L7vaUqSx2Mn-vhca-lgLLh_fk3qbnK2skTVqKrI2B4pmjS5o6z4qmgQFG8WEqXjqaJcsZkF-FA2E675fcIYDKEst319HUg6LeBLbYcwANYrQum2qmfvbr2gvePxg4T3irw1RIVKKPzU2bHnJ9Z4OLy2w2FJYqh00ZPOTeZ-gqwt72zEzF9PWg_4wnuuEEiPMCatTsVMPne");'>
+</div>
+</div>
+</div>
+<!-- Card 2: Iced Matcha Latte -->
+<div class="p-4 bg-white dark:bg-gray-900 rounded-xl shadow-sm border border-primary/5">
+<div class="flex items-stretch justify-between gap-4">
+<div class="flex flex-[2_2_0px] flex-col justify-between py-1">
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-2">
+<p class="text-[#181114] dark:text-white text-lg font-bold leading-tight">Iced Matcha Latte</p>
+<span class="material-symbols-outlined text-green-500 text-sm">energy_savings_leaf</span>
+</div>
+<p class="text-[#896175] dark:text-gray-400 text-sm font-normal leading-normal">Needs a gentle caffeine boost</p>
+</div>
+<div class="flex gap-2 mt-4">
+<button class="flex items-center justify-center rounded-full h-10 px-4 bg-primary/10 text-primary text-sm font-bold border border-primary/10">
+<span class="truncate">I'll get it</span>
+</button>
+<button class="flex items-center justify-center rounded-full h-10 px-4 bg-[#f4f0f2] dark:bg-gray-800 text-[#181114] dark:text-white gap-2 text-sm font-medium">
+<span class="material-symbols-outlined text-[18px]">location_on</span>
+<span class="truncate">Find Nearby</span>
+</button>
+</div>
+</div>
+<div class="w-32 h-32 bg-center bg-no-repeat bg-cover rounded-xl" data-alt="Cold green matcha latte in a glass with ice" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCX_XhJTXgn6Sd254HmtKo24mKkkW2AMoR-I3jeIdZouvbHs_nQ84o3ZLE596ategdZpfBM8yJ7KrYLDCOn8XBsYs_thxz9nBSHLXEfs3AHqQaqD1dSIJ-sCPOLiR8k5CS7VKZZPsq2MNXN1XQgO8KyoWOuIHHa2mhIDngc6liW-lmZ1mgiHc-bKq2KB2Orb7zIE7Ls_oEyDCXzZPu4u6dR73FT7m5kJFEXbtsBFpz9CmjD9bLoHINE-kfcu-r6dEq-88NWh3sEE0CH");'>
+</div>
+</div>
+</div>
+<!-- Card 3: Watermelon -->
+<div class="p-4 bg-white dark:bg-gray-900 rounded-xl shadow-sm border border-primary/5">
+<div class="flex items-stretch justify-between gap-4">
+<div class="flex flex-[2_2_0px] flex-col justify-between py-1">
+<div class="flex flex-col gap-1">
+<p class="text-[#181114] dark:text-white text-lg font-bold leading-tight">Fresh Watermelon</p>
+<p class="text-[#896175] dark:text-gray-400 text-sm font-normal leading-normal">Cold and refreshing slices</p>
+</div>
+<div class="flex gap-2 mt-4">
+<button class="flex items-center justify-center rounded-full h-10 px-4 bg-primary/10 text-primary text-sm font-bold border border-primary/10">
+<span class="truncate">I'll get it</span>
+</button>
+<button class="flex items-center justify-center rounded-full h-10 px-4 bg-[#f4f0f2] dark:bg-gray-800 text-[#181114] dark:text-white gap-2 text-sm font-medium">
+<span class="material-symbols-outlined text-[18px]">location_on</span>
+<span class="truncate">Find Nearby</span>
+</button>
+</div>
+</div>
+<div class="w-32 h-32 bg-center bg-no-repeat bg-cover rounded-xl" data-alt="Sliced fresh red watermelon on a plate" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB80Lu72XyXunxJbaJK62fBUU061KitY3Mm5FF35TL0ktJSOaDwBgBMoOp1qQJg_njhVn39SpgN-ka7BcDnVMR8Ljnc1YnoPXGYc6xlpjnHusGxPUq0ENaeBhj6yHtwqeFaL0508wgNSaJaqqXG-hHTLFx3W1mV-6Kt2CAr3i3nbTdaXPQKQ3vwF1m5ypB12pAp7uHmYRYJLlRpcvoKJX9t7Oth2vg5ky4ZhvKfdei8MocodKzKEBhdf8HMCmHIlRvA7tv5g0boUkN9");'>
+</div>
+</div>
+</div>
+</div>
+<!-- Quick Action Floating Button -->
+<div class="fixed bottom-6 right-6">
+<button class="flex items-center gap-2 bg-primary text-white px-6 py-4 rounded-full shadow-2xl hover:scale-105 transition-transform">
+<span class="material-symbols-outlined">delivery_dining</span>
+<span class="font-bold">Open UberEats</span>
+</button>
+</div>
+</main>
+<!-- Bottom Tab Bar (iOS Style) -->
+<div class="fixed bottom-0 left-0 right-0 h-20 bg-white/90 dark:bg-gray-900/90 backdrop-blur-lg border-t border-primary/10 flex items-center justify-around px-6 pb-4">
+<div class="flex flex-col items-center gap-1 opacity-40">
+<span class="material-symbols-outlined">calendar_month</span>
+<span class="text-[10px] font-bold">Calendar</span>
+</div>
+<div class="flex flex-col items-center gap-1 text-primary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">restaurant</span>
+<span class="text-[10px] font-bold">Cravings</span>
+</div>
+<div class="flex flex-col items-center gap-1 opacity-40">
+<span class="material-symbols-outlined">favorite</span>
+<span class="text-[10px] font-bold">Health</span>
+</div>
+<div class="flex flex-col items-center gap-1 opacity-40">
+<span class="material-symbols-outlined">person</span>
+<span class="text-[10px] font-bold">Profile</span>
+</div>
+</div>
+</body></html>

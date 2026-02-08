@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Partner Cravings View Variant 2</title>
+<!-- Google Fonts: Spline Sans -->
+<link href="https://fonts.googleapis.com/css2?family=Spline+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              colors: {
+                "primary": "#ee2b8c",
+                "background-light": "#ffffff",
+                "background-dark": "#221019",
+                "rose-soft": "#896175",
+                "divider-pink": "#feeaf4",
+              },
+              fontFamily: {
+                "display": ["Spline Sans", "sans-serif"]
+              },
+              borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+            },
+          },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: "Spline Sans", sans-serif;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-[#181114] dark:text-white min-h-screen">
+<div class="relative flex h-auto min-h-screen w-full flex-col bg-background-light dark:bg-background-dark group/design-root overflow-x-hidden max-w-[480px] mx-auto border-x border-divider-pink dark:border-white/10">
+<!-- TopAppBar -->
+<div class="flex items-center bg-background-light dark:bg-background-dark p-4 pb-2 justify-between sticky top-0 z-10 border-b border-divider-pink dark:border-white/5">
+<div class="text-primary flex size-12 shrink-0 items-center justify-start">
+<span class="material-symbols-outlined cursor-pointer">arrow_back_ios</span>
+</div>
+<h2 class="text-rose-soft dark:text-primary text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center">Partner Support</h2>
+<div class="flex w-12 items-center justify-end">
+<button class="flex cursor-pointer items-center justify-center rounded-full h-12 bg-transparent text-primary">
+<span class="material-symbols-outlined">more_horiz</span>
+</button>
+</div>
+</div>
+<!-- Hero Status Info (Optional context for partner) -->
+<div class="px-6 py-6 bg-primary/5 dark:bg-primary/10 mb-2">
+<p class="text-rose-soft dark:text-primary/80 text-sm font-medium uppercase tracking-widest mb-1">Current Phase</p>
+<h1 class="text-2xl font-bold text-[#181114] dark:text-white">Luteal Support</h1>
+<p class="text-rose-soft dark:text-white/60 text-sm mt-1 italic">"Cravings are starting to kick in. You've got this!"</p>
+</div>
+<!-- SectionHeader -->
+<div class="flex items-center justify-between px-4 pt-4">
+<h3 class="text-primary text-lg font-bold leading-tight tracking-[-0.015em]">Ongoing Requests</h3>
+<span class="text-xs bg-primary/10 text-primary px-2 py-1 rounded-full font-bold">3 ACTIVE</span>
+</div>
+<div class="h-4"></div>
+<!-- List Items with Dividers -->
+<div class="flex flex-col">
+<!-- ListItem 1 -->
+<div class="flex flex-col bg-background-light dark:bg-background-dark px-4 py-4 transition-colors hover:bg-divider-pink/30">
+<div class="flex gap-4 justify-between items-start">
+<div class="flex items-start gap-4 flex-1">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-lg size-[80px] shadow-sm border border-divider-pink" data-alt="Gourmet dark chocolate bar with sea salt" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuD-Z0N9yrl5I6DYANwGRrMQYjAOxswaDNXyQzcmuCsh5HkhMq8DzG1f2NQ9x_G8g6dy8cgX89Tuf8_zytTgDsVKXAixASIG39L0BC-rQ6WGyKmAVw2fyhkRz1_bK4hXJsYJPBlj84yXWG6g1lHIl5U973qkdIegy5oUf9rzkKz3miJLlt_SezWK5ozD29O3ngm7oQ0gU7PQiobCKnz6Uu9dXdjevuTJLmE3Lw6IPM3ttPagsl_ZaKd3f_tcCfqBn5the9PjGum4H5nM");'></div>
+<div class="flex flex-1 flex-col">
+<div class="flex items-center gap-2">
+<p class="text-[#181114] dark:text-white text-base font-semibold leading-normal">Dark Chocolate</p>
+<span class="size-2 rounded-full bg-red-400"></span>
+</div>
+<p class="text-primary text-xs font-bold uppercase tracking-tighter mt-0.5">High Urgency</p>
+<p class="text-rose-soft dark:text-white/70 text-sm font-normal italic leading-normal mt-2">"She likes the dark chocolate ones with sea salt best."</p>
+</div>
+</div>
+</div>
+<div class="flex gap-2 mt-4">
+<button class="flex items-center justify-center rounded-full h-10 px-4 bg-primary/10 text-primary text-sm font-medium flex-none">
+<span class="material-symbols-outlined text-lg mr-2">delivery_dining</span>
+                        Order
+                    </button>
+<button class="flex items-center justify-center rounded-full h-10 px-4 bg-primary text-white text-sm font-bold flex-1">
+                        Mark as Fulfilled
+                    </button>
+</div>
+</div>
+<div class="h-[1px] bg-divider-pink dark:bg-white/10 mx-4"></div>
+<!-- ListItem 2 -->
+<div class="flex flex-col bg-background-light dark:bg-background-dark px-4 py-4 transition-colors hover:bg-divider-pink/30">
+<div class="flex gap-4 justify-between items-start">
+<div class="flex items-start gap-4 flex-1">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-lg size-[80px] shadow-sm border border-divider-pink" data-alt="Jar of crunchy dill pickles" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAy0EJbu0sPd5D8NSUkNQMgkmruC-pq27RtsvLmUlJRItcxs66UvBzi1YjjK5SG8Nz4fkqf57ggkfe-h3PsjCgOgyHPR6AgoKnMlpGei8O9XujM42uT5TapBtjLOTcWTTEbbEg3tSlpQKvDGkFdY4pDnY-1ob4h3Vul9yFjH2eofBAUhlgOI_Y3025k8I0jDfHVJUgW75i6yy1bm4G4FSr2-rNovNjjm_sJ65kdqVo7YaOPMzFlmE2SLGAZVRBBWokG_SK5mlyx7cwa");'></div>
+<div class="flex flex-1 flex-col">
+<p class="text-[#181114] dark:text-white text-base font-semibold leading-normal">Pickles</p>
+<p class="text-rose-soft dark:text-white/60 text-xs font-normal leading-normal">Requested 1h ago</p>
+<p class="text-rose-soft dark:text-white/70 text-sm font-normal italic leading-normal mt-2">"Specific brand: Crunchy Dills. Please avoid the bread &amp; butter ones!"</p>
+</div>
+</div>
+</div>
+<div class="flex gap-2 mt-4">
+<button class="flex items-center justify-center rounded-full h-10 px-4 bg-primary/10 text-primary text-sm font-medium flex-none">
+<span class="material-symbols-outlined text-lg mr-2">storefront</span>
+                        Find Shop
+                    </button>
+<button class="flex items-center justify-center rounded-full h-10 px-4 bg-primary text-white text-sm font-bold flex-1">
+                        Mark as Fulfilled
+                    </button>
+</div>
+</div>
+<div class="h-[1px] bg-divider-pink dark:bg-white/10 mx-4"></div>
+<!-- ListItem 3 -->
+<div class="flex flex-col bg-background-light dark:bg-background-dark px-4 py-4 transition-colors hover:bg-divider-pink/30">
+<div class="flex gap-4 justify-between items-start">
+<div class="flex items-start gap-4 flex-1">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-lg size-[80px] shadow-sm border border-divider-pink" data-alt="Iced vanilla latte with whipped cream" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBAzd439hKPcZY-q5aWDs1kcI70cq9sjNbSnET6rC6M6ixV0F-vTkj-u_9yVaPOMOAkwA5gcLvk0yw2QMZQjxkfD-XSHnKeZryj_qeVRsGltK315rbmRW_wUSkUrNZ0jRsLEA0WBL3Sbt3G7a2FebTfq85I_APeO80LCDuMgSi9ra4BbsJt6CA4m-6-KOqzMBaIhO2fa2jUO_fG2QBBG06dJMnMR8Fx_94Q6XENGzuFGr5gAZUyl10DjW71THJFNwBDVWuEGH8QIfae");'></div>
+<div class="flex flex-1 flex-col">
+<p class="text-[#181114] dark:text-white text-base font-semibold leading-normal">Iced Vanilla Latte</p>
+<p class="text-rose-soft dark:text-white/60 text-xs font-normal leading-normal">Requested 20m ago</p>
+<p class="text-rose-soft dark:text-white/70 text-sm font-normal italic leading-normal mt-2">"Oat milk only! Extra shot of espresso if she looks tired."</p>
+</div>
+</div>
+</div>
+<div class="flex gap-2 mt-4">
+<button class="flex items-center justify-center rounded-full h-10 px-4 bg-primary/10 text-primary text-sm font-medium flex-none">
+<span class="material-symbols-outlined text-lg mr-2">shopping_bag</span>
+                        DoorDash
+                    </button>
+<button class="flex items-center justify-center rounded-full h-10 px-4 bg-primary text-white text-sm font-bold flex-1">
+                        Mark as Fulfilled
+                    </button>
+</div>
+</div>
+</div>
+<!-- SectionHeader: Recently Fulfilled -->
+<div class="h-8"></div>
+<h3 class="text-[#181114] dark:text-white text-sm font-bold uppercase tracking-widest px-4 pb-2">Recently Fulfilled</h3>
+<!-- Fulfilled Item (Minimalist/Greyed) -->
+<div class="flex gap-4 bg-background-light dark:bg-background-dark px-4 py-3 opacity-60">
+<div class="flex items-start gap-4">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-lg size-[50px] grayscale" data-alt="Pink glazed donuts" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAU55I3yPA7tlE0Z6E3ROGuFOF7FuGxaS27AZO6wgfnK0qOm8Lyka0zi92PeWWwXXuGJbbxQCMBtvudWLJPRiXQyn7Zzt28fbummzFlre1FJdoL4xFWXDPaeCemYAz6RsVFyG6nZPLDMUCJIvJ27W-JDWOk-EWp0t2h9-zgCRBDdAZG2nqnJ8wIKS3LoZ0gOD04TaPipab3M121URuAdsEGIh2-OrGl4WHIpFE_xw42ZMHqIFS-9XpR63wTmo7vEEGPpkYXStW9qswx");'></div>
+<div class="flex flex-1 flex-col justify-center">
+<p class="text-[#181114] dark:text-white text-sm font-medium leading-normal line-through">Glazed Donuts</p>
+<p class="text-rose-soft dark:text-white/50 text-xs font-normal leading-normal">Fulfilled 4h ago</p>
+</div>
+</div>
+<div class="shrink-0 self-center">
+<span class="material-symbols-outlined text-green-500">check_circle</span>
+</div>
+</div>
+<!-- Footer Padding -->
+<div class="h-20 bg-background-light dark:bg-background-dark"></div>
+<!-- Bottom Tab Bar (Simplified for Partner) -->
+<div class="fixed bottom-0 left-0 right-0 bg-white/80 dark:bg-background-dark/80 backdrop-blur-md border-t border-divider-pink dark:border-white/10 max-w-[480px] mx-auto">
+<div class="flex justify-around items-center h-16">
+<div class="flex flex-col items-center text-rose-soft">
+<span class="material-symbols-outlined">calendar_month</span>
+<span class="text-[10px] mt-0.5">Cycle</span>
+</div>
+<div class="flex flex-col items-center text-primary">
+<span class="material-symbols-outlined font-bold">favorite</span>
+<span class="text-[10px] mt-0.5 font-bold">Cravings</span>
+</div>
+<div class="flex flex-col items-center text-rose-soft">
+<span class="material-symbols-outlined">lightbulb</span>
+<span class="text-[10px] mt-0.5">Tips</span>
+</div>
+<div class="flex flex-col items-center text-rose-soft">
+<span class="material-symbols-outlined">settings</span>
+<span class="text-[10px] mt-0.5">Settings</span>
+</div>
+</div>
+</div>
+</div>
+</body></html>

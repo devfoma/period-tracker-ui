@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Daily Symptom Logger</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f90680",
+                        "background-light": "#fdf8fa",
+                        "background-dark": "#230f19",
+                        "card-light": "#ffffff",
+                        "border-light": "#fce7f3",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-[#2d1b24] antialiased">
+<div class="relative flex min-h-screen w-full flex-col max-w-md mx-auto overflow-x-hidden pb-32">
+<!-- TopAppBar -->
+<header class="sticky top-0 z-50 flex items-center bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md p-4 justify-between">
+<button class="text-[#181114] dark:text-white flex size-10 shrink-0 items-center justify-center rounded-full hover:bg-primary/10">
+<span class="material-symbols-outlined">arrow_back_ios_new</span>
+</button>
+<div class="flex flex-col items-center">
+<h2 class="text-[#181114] dark:text-white text-lg font-bold leading-tight tracking-tight">Daily Logger</h2>
+<p class="text-primary text-xs font-semibold">Today, Oct 24</p>
+</div>
+<button class="text-[#181114] dark:text-white flex size-10 shrink-0 items-center justify-center rounded-full hover:bg-primary/10">
+<span class="material-symbols-outlined">calendar_today</span>
+</button>
+</header>
+<main class="flex-1 px-4">
+<!-- SectionHeader: Mood -->
+<div class="flex items-center justify-between pt-6 pb-2">
+<h3 class="text-[#181114] dark:text-white text-xl font-extrabold tracking-tight">How's your mood?</h3>
+<span class="text-primary text-sm font-medium">Select one</span>
+</div>
+<!-- TextGrid: Moods -->
+<div class="grid grid-cols-3 gap-3 py-4">
+<div class="flex flex-col gap-2 rounded-xl border-2 border-primary bg-primary/5 p-4 items-center justify-center transition-all">
+<div class="text-primary" data-icon="sentiment_very_satisfied">
+<span class="material-symbols-outlined text-3xl">sentiment_very_satisfied</span>
+</div>
+<span class="text-[#181114] dark:text-white text-sm font-bold">Happy</span>
+</div>
+<div class="flex flex-col gap-2 rounded-xl border border-border-light dark:border-white/10 bg-white dark:bg-white/5 p-4 items-center justify-center">
+<div class="text-primary/60" data-icon="auto_awesome">
+<span class="material-symbols-outlined text-3xl">auto_awesome</span>
+</div>
+<span class="text-[#181114] dark:text-white text-sm font-bold">Sensitive</span>
+</div>
+<div class="flex flex-col gap-2 rounded-xl border border-border-light dark:border-white/10 bg-white dark:bg-white/5 p-4 items-center justify-center">
+<div class="text-primary/60" data-icon="bedtime">
+<span class="material-symbols-outlined text-3xl">bedtime</span>
+</div>
+<span class="text-[#181114] dark:text-white text-sm font-bold">Tired</span>
+</div>
+<div class="flex flex-col gap-2 rounded-xl border border-border-light dark:border-white/10 bg-white dark:bg-white/5 p-4 items-center justify-center">
+<div class="text-primary/60" data-icon="cloud">
+<span class="material-symbols-outlined text-3xl">cloud</span>
+</div>
+<span class="text-[#181114] dark:text-white text-sm font-bold">Anxious</span>
+</div>
+<div class="flex flex-col gap-2 rounded-xl border border-border-light dark:border-white/10 bg-white dark:bg-white/5 p-4 items-center justify-center">
+<div class="text-primary/60" data-icon="eco">
+<span class="material-symbols-outlined text-3xl">eco</span>
+</div>
+<span class="text-[#181114] dark:text-white text-sm font-bold">Calm</span>
+</div>
+<div class="flex flex-col gap-2 rounded-xl border border-border-light dark:border-white/10 bg-white dark:bg-white/5 p-4 items-center justify-center">
+<div class="text-primary/60" data-icon="add">
+<span class="material-symbols-outlined text-3xl">add</span>
+</div>
+<span class="text-[#181114] dark:text-white text-sm font-bold">Other</span>
+</div>
+</div>
+<!-- Section: Flow Intensity -->
+<div class="pt-6 pb-2">
+<h3 class="text-[#181114] dark:text-white text-xl font-extrabold tracking-tight">Flow Intensity</h3>
+</div>
+<div class="bg-white dark:bg-white/5 rounded-xl border border-border-light dark:border-white/10 p-6 my-4">
+<div class="relative w-full h-2 bg-pink-100 dark:bg-pink-900/30 rounded-full mb-8">
+<div class="absolute left-0 top-0 h-full w-1/2 bg-primary rounded-full"></div>
+<div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 size-6 bg-white border-4 border-primary rounded-full shadow-lg"></div>
+</div>
+<div class="flex justify-between text-xs font-bold text-gray-500 dark:text-gray-400 uppercase tracking-widest">
+<span>None</span>
+<span class="text-primary">Medium</span>
+<span>Heavy</span>
+</div>
+</div>
+<!-- SectionHeader: Symptoms -->
+<div class="pt-6 pb-2">
+<h3 class="text-[#181114] dark:text-white text-xl font-extrabold tracking-tight">Symptoms</h3>
+</div>
+<!-- TextGrid: Symptoms -->
+<div class="grid grid-cols-2 gap-3 py-4">
+<div class="flex flex-1 gap-3 rounded-xl border border-border-light dark:border-white/10 bg-white dark:bg-white/5 p-4 items-center">
+<div class="text-primary" data-icon="air">
+<span class="material-symbols-outlined">air</span>
+</div>
+<h2 class="text-[#181114] dark:text-white text-base font-bold leading-tight">Bloating</h2>
+</div>
+<div class="flex flex-1 gap-3 rounded-xl border border-primary bg-primary/5 p-4 items-center">
+<div class="text-primary" data-icon="psychology">
+<span class="material-symbols-outlined">psychology</span>
+</div>
+<h2 class="text-[#181114] dark:text-white text-base font-bold leading-tight">Headache</h2>
+</div>
+<div class="flex flex-1 gap-3 rounded-xl border border-border-light dark:border-white/10 bg-white dark:bg-white/5 p-4 items-center">
+<div class="text-primary" data-icon="flare">
+<span class="material-symbols-outlined">flare</span>
+</div>
+<h2 class="text-[#181114] dark:text-white text-base font-bold leading-tight">Acne</h2>
+</div>
+<div class="flex flex-1 gap-3 rounded-xl border border-primary bg-primary/5 p-4 items-center">
+<div class="text-primary" data-icon="waves">
+<span class="material-symbols-outlined">waves</span>
+</div>
+<h2 class="text-[#181114] dark:text-white text-base font-bold leading-tight">Cramps</h2>
+</div>
+<div class="flex flex-1 gap-3 rounded-xl border border-border-light dark:border-white/10 bg-white dark:bg-white/5 p-4 items-center">
+<div class="text-primary" data-icon="accessibility_new">
+<span class="material-symbols-outlined">accessibility_new</span>
+</div>
+<h2 class="text-[#181114] dark:text-white text-base font-bold leading-tight">Backache</h2>
+</div>
+<div class="flex flex-1 gap-3 rounded-xl border border-border-light dark:border-white/10 bg-white dark:bg-white/5 p-4 items-center">
+<div class="text-primary" data-icon="water_drop">
+<span class="material-symbols-outlined">water_drop</span>
+</div>
+<h2 class="text-[#181114] dark:text-white text-base font-bold leading-tight">Spotting</h2>
+</div>
+</div>
+<!-- Notes Section -->
+<div class="pt-6 pb-2">
+<h3 class="text-[#181114] dark:text-white text-xl font-extrabold tracking-tight">Personal Notes</h3>
+</div>
+<div class="py-4">
+<textarea class="w-full h-32 p-4 rounded-xl border border-border-light dark:border-white/10 bg-white dark:bg-white/5 focus:ring-primary focus:border-primary text-sm" placeholder="How was your day? Write down any thoughts..."></textarea>
+</div>
+<!-- Placeholder for bottom spacing -->
+<div class="h-10"></div>
+</main>
+<!-- Fixed Bottom Action -->
+<div class="fixed bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-background-light dark:from-background-dark via-background-light/95 dark:via-background-dark/95 to-transparent">
+<div class="max-w-md mx-auto">
+<button class="w-full bg-primary hover:bg-primary/90 text-white font-extrabold py-4 rounded-full shadow-lg shadow-primary/30 transition-transform active:scale-95 flex items-center justify-center gap-2">
+<span>Save Daily Entry</span>
+<span class="material-symbols-outlined">check_circle</span>
+</button>
+</div>
+</div>
+</div>
+</body></html>

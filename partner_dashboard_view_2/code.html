@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Partner Dashboard View</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f04299",
+                        "background-light": "#f8f6f7",
+                        "background-dark": "#221019",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    borderRadius: { "DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: "Plus Jakarta Sans", sans-serif;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-[#181114] dark:text-white min-h-screen">
+<div class="relative mx-auto flex h-auto min-h-screen w-full max-w-[480px] flex-col overflow-x-hidden group/design-root">
+<div class="flex items-center bg-background-light dark:bg-background-dark p-4 pb-2 justify-between sticky top-0 z-50">
+<div class="flex size-12 shrink-0 items-center">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10 border-2 border-primary/20" data-alt="Portrait of a smiling woman Sarah" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCqwY3oIDg25Q-gIjFh09b0XWly-3BRRWZk_FSBY1C7C6KqHVKN-qZim22BcH0vll-7GJP0zwxLf5D56WCdORZJUkF88qn9pPipqf5LAerOPsEq3WND1C74E11zf_LZEXLLhubIU-sCw5vI5-06t3b-6zy6c-eYPYnAZwMRh7PmK-x3ItY0Tx-O4VnsnUH9LihZRjg_KDo503AOSy3l-HVPxCgbWS_uGiUKUALar_MLUsCIfbydRrAP8fgQq-T3UC7fisapsVv6Pi39");'>
+</div>
+</div>
+<h2 class="text-[#181114] dark:text-white text-lg font-bold leading-tight tracking-[-0.015em] flex-1 ml-3 font-display">Sarah's Cycle</h2>
+<div class="flex w-12 items-center justify-end">
+<button class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 bg-transparent text-[#181114] dark:text-white gap-2 text-base font-bold leading-normal tracking-[0.015em] min-w-0 p-0">
+<span class="material-symbols-outlined text-2xl">notifications</span>
+</button>
+</div>
+</div>
+<div class="p-4 @container">
+<div class="flex flex-col items-stretch justify-start rounded-xl @xl:flex-row @xl:items-start shadow-sm bg-white dark:bg-[#2d1a24] overflow-hidden border border-primary/10">
+<div class="w-full bg-center bg-no-repeat aspect-video bg-cover" data-alt="Soft pink abstract waves and hearts" style="background-image: linear-gradient(135deg, #f04299 0%, #ff85be 100%);">
+<div class="flex h-full w-full items-center justify-center text-white">
+<div class="flex flex-col items-center">
+<span class="text-5xl font-extrabold">2</span>
+<span class="text-sm uppercase tracking-widest font-bold opacity-90">Days to go</span>
+</div>
+</div>
+</div>
+<div class="flex w-full min-w-72 grow flex-col items-stretch justify-center gap-1 py-5 px-5">
+<p class="text-[#181114] dark:text-white text-xl font-bold leading-tight tracking-[-0.015em] font-display">Period starts in 2 days</p>
+<div class="flex items-end gap-3 justify-between">
+<div class="flex flex-col gap-1">
+<p class="text-primary font-bold text-sm uppercase tracking-wide">Phase: Late Luteal</p>
+<p class="text-[#896175] dark:text-[#c4a1b2] text-sm font-normal leading-normal">The cycle is currently on day 26. Sarah might be feeling a bit more tired or sensitive than usual.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="px-4 pt-4">
+<h2 class="text-[#181114] dark:text-white text-[20px] font-bold leading-tight tracking-[-0.015em] font-display">Current Mood</h2>
+</div>
+<div class="p-4">
+<div class="flex items-stretch justify-between gap-4 rounded-xl bg-primary/5 dark:bg-primary/10 p-4 border border-primary/10">
+<div class="flex flex-col gap-2 flex-[2_2_0px]">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">sentiment_dissatisfied</span>
+<p class="text-[#181114] dark:text-white text-base font-bold leading-tight font-display">Feeling Sensitive</p>
+</div>
+<p class="text-[#896175] dark:text-[#c4a1b2] text-sm font-normal leading-relaxed">
+<span class="font-bold text-primary">Pro-tip:</span> She might need some extra chocolate, a warm hug, or a movie night in!
+                    </p>
+</div>
+<div class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl flex-1 max-w-[100px]" data-alt="Illustration of a cozy chocolate box and a blanket" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAj2eBSO8W5gTq8TPKS4CogfxPmR2m6LsMdOeBnXN5UsM0o9vyIzvwSYZPyRIySRUrLwLThNVXi2OE70sZ9u-6NeBXMfpysuXGUh6pjS0e88oC0HPNYqu6M6NjH_v4GdfOPqEp4-_6e9sZxueBY_WXF7M3XihDz5l-RWzjhFDpdg90F5pQunlM4aG4vNr8trrrPy5eLrYmzY3zKia7gejZcDdMibB1r0CBqFJyPOkEYc6Uyt5ahxjWFlic4WAfkXEuaxpYs_djjXFp8");'>
+</div>
+</div>
+</div>
+<div class="px-4 pt-6 pb-2">
+<h2 class="text-[#181114] dark:text-white text-[20px] font-bold leading-tight tracking-[-0.015em] font-display">Send a Gift</h2>
+<p class="text-[#896175] dark:text-[#c4a1b2] text-sm font-medium mt-1">Brighten her day</p>
+</div>
+<div class="px-4 grid grid-cols-2 gap-4">
+<button class="flex flex-col items-center justify-center p-4 bg-white dark:bg-[#2d1a24] border border-primary/20 rounded-2xl shadow-sm hover:border-primary/40 active:scale-95 transition-all">
+<div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-3">
+<span class="material-symbols-outlined text-primary text-3xl">local_florist</span>
+</div>
+<span class="text-[#181114] dark:text-white font-bold text-sm">Send Flowers</span>
+</button>
+<button class="flex flex-col items-center justify-center p-4 bg-white dark:bg-[#2d1a24] border border-primary/20 rounded-2xl shadow-sm hover:border-primary/40 active:scale-95 transition-all">
+<div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-3">
+<span class="material-symbols-outlined text-primary text-3xl">cookie</span>
+</div>
+<span class="text-[#181114] dark:text-white font-bold text-sm">Send Chocolate</span>
+</button>
+</div>
+<div class="px-4 pt-8">
+<h2 class="text-[#181114] dark:text-white text-[20px] font-bold leading-tight tracking-[-0.015em] font-display">Send Support</h2>
+</div>
+<div class="flex px-4 py-4 justify-center">
+<button class="w-full flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-16 px-5 bg-primary text-white gap-3 text-lg font-bold leading-normal tracking-[0.015em] shadow-lg shadow-primary/30 active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-2xl">favorite</span>
+<span class="truncate">Send Love</span>
+</button>
+</div>
+<div class="px-4 pb-10">
+<p class="text-[#896175] dark:text-[#c4a1b2] text-xs font-bold uppercase tracking-widest mb-3">Logged Symptoms</p>
+<div class="flex flex-wrap gap-2">
+<span class="px-4 py-2 rounded-full bg-white dark:bg-[#2d1a24] text-xs font-bold border border-primary/20 text-[#896175] dark:text-[#c4a1b2] flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">bedtime</span> Low Energy
+                </span>
+<span class="px-4 py-2 rounded-full bg-white dark:bg-[#2d1a24] text-xs font-bold border border-primary/20 text-[#896175] dark:text-[#c4a1b2] flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">water_drop</span> Cramps
+                </span>
+<span class="px-4 py-2 rounded-full bg-white dark:bg-[#2d1a24] text-xs font-bold border border-primary/20 text-[#896175] dark:text-[#c4a1b2] flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">sentiment_neutral</span> Irritable
+                </span>
+</div>
+</div>
+<div class="mt-auto border-t border-primary/10 bg-white/80 dark:bg-background-dark/80 backdrop-blur-md flex justify-around p-3 pb-8">
+<div class="flex flex-col items-center gap-1 text-primary">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="text-[10px] font-bold">Today</span>
+</div>
+<div class="flex flex-col items-center gap-1 text-[#896175] opacity-50">
+<span class="material-symbols-outlined">calendar_month</span>
+<span class="text-[10px] font-bold">Calendar</span>
+</div>
+<div class="flex flex-col items-center gap-1 text-[#896175] opacity-50">
+<span class="material-symbols-outlined">lightbulb</span>
+<span class="text-[10px] font-bold">Insights</span>
+</div>
+<div class="flex flex-col items-center gap-1 text-[#896175] opacity-50">
+<span class="material-symbols-outlined">settings</span>
+<span class="text-[10px] font-bold">Settings</span>
+</div>
+</div>
+</div>
+
+</body></html>

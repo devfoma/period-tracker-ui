@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#f04299",
+              "background-light": "#f8f6f7",
+              "background-dark": "#221019",
+            },
+            fontFamily: {
+              "display": ["Plus Jakarta Sans", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+        .ios-blur {
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+        .wallpaper-gradient {
+            background: linear-gradient(180deg, #ffd1e3 0%, #f04299 100%);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display">
+<!-- Mobile Screen Container -->
+<div class="relative mx-auto my-8 h-[844px] w-[390px] overflow-hidden rounded-[3rem] border-[8px] border-gray-800 shadow-2xl wallpaper-gradient">
+<!-- Wallpaper Background Image Overlay -->
+<div class="absolute inset-0 z-0 opacity-40 bg-center bg-cover" data-alt="Soft pink flower petals with bokeh effect" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA46Y-ezLlHINduJqaLVBdB_qoEee5muBcjhXBdNZj8nEWkvvE_Y-5dqDssdX-goJI2TWYxuUGxvTDzglNYK9j5KQR-c-QUueTpoI78trUUWDH12bSsJFEEwuC0BxEoQiHzXNnUgU0hE_IMlmzL85huQMwViHCfQaqLr0-urny3Le9Z3S9ar5fKUzmIIHtNTfTwGXukF_Zvhvm083rbJddLKfYOpl4cbPvMyaIQTrDltmxMhwApEJZOtP78CGE5IQdWRl1Uh9aFykf4");'>
+</div>
+<!-- Top App Bar (iOS Status Bar) -->
+<div class="relative z-10 flex h-12 w-full items-center justify-between px-8 pt-4 text-white">
+<div class="text-sm font-bold">9:41</div>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[18px]">signal_cellular_alt</span>
+<span class="material-symbols-outlined text-[18px]">wifi</span>
+<span class="material-symbols-outlined text-[22px]">battery_full</span>
+</div>
+</div>
+<!-- Headline Text (Date and Time) -->
+<div class="relative z-10 mt-12 flex flex-col items-center text-white">
+<p class="text-lg font-medium tracking-wide">Tuesday, October 24</p>
+<h1 class="mt-2 text-[84px] font-bold leading-none tracking-tight">09:41</h1>
+</div>
+<!-- Notification Section -->
+<div class="relative z-10 mt-16 px-4">
+<!-- iOS Push Notification Card -->
+<div class="ios-blur flex flex-col gap-1 rounded-3xl bg-white/70 p-4 shadow-lg ring-1 ring-black/5 dark:bg-black/40 dark:ring-white/10">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<!-- App Icon -->
+<div class="flex h-6 w-6 items-center justify-center rounded-lg bg-primary text-white shadow-sm">
+<span class="material-symbols-outlined text-[16px] fill-current">favorite</span>
+</div>
+<span class="text-xs font-semibold uppercase tracking-wider text-gray-700 dark:text-gray-200">Cycle Harmony</span>
+</div>
+<span class="text-[11px] text-gray-500 dark:text-gray-400">now</span>
+</div>
+<div class="mt-1">
+<p class="text-sm font-bold text-gray-900 dark:text-white leading-tight">Sarah's Status Update</p>
+<p class="mt-0.5 text-[13px] leading-snug text-gray-800 dark:text-gray-300">
+                        She's feeling a bit sensitive today. Check in on her? ❤️
+                    </p>
+</div>
+</div>
+<!-- Subtle indication of other notifications -->
+<div class="mx-auto mt-2 h-2 w-[92%] rounded-b-xl bg-white/40 ios-blur"></div>
+</div>
+<!-- Bottom Actions -->
+<div class="absolute bottom-10 z-10 flex w-full flex-col items-center px-8">
+<div class="flex w-full justify-between items-center mb-16">
+<!-- Lockscreen Quick Actions -->
+<div class="flex h-12 w-12 items-center justify-center rounded-full bg-black/20 text-white ios-blur">
+<span class="material-symbols-outlined">flashlight_on</span>
+</div>
+<div class="flex h-12 w-12 items-center justify-center rounded-full bg-black/20 text-white ios-blur">
+<span class="material-symbols-outlined">photo_camera</span>
+</div>
+</div>
+<!-- Swipe Indicator -->
+<div class="flex flex-col items-center gap-2">
+<p class="text-sm font-medium text-white/80">Swipe up to open</p>
+<div class="h-1.5 w-36 rounded-full bg-white/90"></div>
+</div>
+</div>
+<!-- Notch/Dynamic Island Mockup -->
+<div class="absolute top-2 left-1/2 z-20 h-8 w-32 -translate-x-1/2 rounded-full bg-black"></div>
+</div>
+<!-- Background Decoration for Desktop Preview -->
+<div class="fixed inset-0 -z-10 bg-background-light dark:bg-background-dark"></div>
+</body></html>

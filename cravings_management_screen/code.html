@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Cravings Management Screen</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Spline+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ee2b8c",
+                        "background-light": "#fdf8fa",
+                        "background-dark": "#221019",
+                    },
+                    fontFamily: {
+                        "display": ["Spline Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "1.25rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Spline Sans', sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .kawaii-shadow {
+            box-shadow: 0 8px 20px -4px rgba(238, 43, 140, 0.15);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-[#181114] dark:text-white min-h-screen">
+<!-- Top Navigation Bar -->
+<div class="sticky top-0 z-50 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md px-4 py-4 flex items-center justify-between">
+<div class="flex size-10 items-center justify-center bg-white dark:bg-zinc-800 rounded-full shadow-sm">
+<span class="material-symbols-outlined text-[#181114] dark:text-white">arrow_back_ios_new</span>
+</div>
+<h1 class="text-xl font-bold tracking-tight text-[#181114] dark:text-white">My Cravings</h1>
+<button class="flex size-10 items-center justify-center bg-white dark:bg-zinc-800 rounded-full shadow-sm text-primary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1">favorite</span>
+</button>
+</div>
+<!-- Main Content -->
+<main class="pb-24">
+<!-- Action Panel: Notify Partners -->
+<div class="p-4">
+<div class="flex flex-1 flex-col items-start justify-between gap-4 rounded-xl border border-primary/10 bg-white dark:bg-zinc-900 p-5 @[480px]:flex-row @[480px]:items-center kawaii-shadow">
+<div class="flex flex-col gap-1">
+<p class="text-[#181114] dark:text-white text-base font-bold leading-tight flex items-center gap-2">
+                        Notify Partners 
+                        <span class="material-symbols-outlined text-primary text-sm">auto_awesome</span>
+</p>
+<p class="text-[#896175] dark:text-zinc-400 text-sm font-normal leading-normal">Instantly share your desires with loved ones</p>
+</div>
+<label class="relative flex h-[31px] w-[51px] cursor-pointer items-center rounded-full border-none bg-[#f4f0f2] dark:bg-zinc-700 p-0.5 has-[:checked]:justify-end has-[:checked]:bg-primary transition-all duration-300">
+<div class="h-full w-[27px] rounded-full bg-white shadow-md"></div>
+<input checked="" class="invisible absolute" type="checkbox"/>
+</label>
+</div>
+</div>
+<!-- Story Carousel: Categories -->
+<div class="px-4 py-2">
+<h3 class="text-[#181114] dark:text-white text-lg font-bold mb-4">Feeling...</h3>
+<div class="flex w-full overflow-x-auto no-scrollbar gap-5 pb-2">
+<div class="flex flex-col items-center gap-2 min-w-[70px]">
+<div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center border-2 border-primary/20 p-1">
+<div class="w-full h-full rounded-full bg-cover bg-center" data-alt="Pink glazed donut with sprinkles" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBFHcz1vb1tXI3rWYZmJ6zz_vAJtBvp8eEhf7wkwkoynSspAIiliBODSLdDepn5jMTnJTc4eaW8BgJe3VLOqlZX3z4ithWOvc6XXc6xwNkSzGurZ2hraP-iUPH1tRFx-iU26hI3w9ARWu8gNSpKxsEhbzVLCdQUHq1--1ExFtyb1yCiaIJMeOO9l81arm_0Q66L5Jg8gCH-mgQ1MLC_Th3cya3zSYkI6Msv-QoNnFCd8AJ87GeHdDI734d5FKe40H8OFxtdJcUWwkU-");'></div>
+</div>
+<p class="text-[#181114] dark:text-zinc-300 text-[13px] font-medium">Sweet</p>
+</div>
+<div class="flex flex-col items-center gap-2 min-w-[70px]">
+<div class="w-16 h-16 bg-zinc-100 dark:bg-zinc-800 rounded-full flex items-center justify-center p-1">
+<div class="w-full h-full rounded-full bg-cover bg-center" data-alt="Salted pretzel icon" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBCW0hiAVxc24dylLn2ibm_U2QwzUHfsrJb8VEck0l2Wyz95Zv9T0tWfpVeXjLUVcxf8_dAXzE1wmO-X7k7PvKzyJBLfEut9FOQVDXOuK6_pl_cdiexUqh9YStZccVJ8dUbF94ijZR77KkQNs-2SmeGPv3wsrw8g0V3Ovn9IVaAnhJeBPxSy7SS6IjFdAiqlsyYLBKfwAUYf-_vmmz8hu2W_1QWqnFdGZfM36wcGfGgA2HHJEzNImaYn0LUdZUJoctHA7biByMMKhPC");'></div>
+</div>
+<p class="text-[#181114] dark:text-zinc-300 text-[13px] font-normal">Salty</p>
+</div>
+<div class="flex flex-col items-center gap-2 min-w-[70px]">
+<div class="w-16 h-16 bg-zinc-100 dark:bg-zinc-800 rounded-full flex items-center justify-center p-1">
+<div class="w-full h-full rounded-full bg-cover bg-center" data-alt="Cute bubble tea icon" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDWWHnqnje6PwZQBjImyQil0HZDRwezAqXnyqwn2S-ZvZ3qo0rXvc36dcKqP1F4xgOunQGrBq41I5lfZkplZXVjyw5ek9uatRGw2RrkM1vaqm7YcaaEC0FT39ccUzK59WdgyUg59c2CkTdipHAmdW_CGj7a5phBQQAwsNftDjLXm1P1xdEYR6Y5mtvQqDITQPvo79Ct1RnDU24u8PhFPPcI5IrvMf3WK6eAI4xPa98jmMfH7QQiBQ0_gq91plm7JKgW2Ye_t47FHjpm");'></div>
+</div>
+<p class="text-[#181114] dark:text-zinc-300 text-[13px] font-normal">Cool</p>
+</div>
+<div class="flex flex-col items-center gap-2 min-w-[70px]">
+<div class="w-16 h-16 bg-zinc-100 dark:bg-zinc-800 rounded-full flex items-center justify-center p-1">
+<div class="w-full h-full rounded-full bg-cover bg-center" data-alt="Savory pizza slice" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB01U7SEhztrAYzF3PdJsEetJu0AT3AyHIE2HvKWkit3I8Osz3WRNccBqdhD2jKVXvXjfo_j1ulurmi-K6XSdldjd9EXcgRwrGYD5a4_wdH4-BtM3tB74ooT6jVByQwf7IZGhxk1rqPpUNdNI_yDx5SjnYUVL4fYHEv-eUm_demV5xnlGLZzuBbBKkkP3Ll_uz8iSHo9nc_pGdc9JPRlsUdlWT6-bM80f5fYWdoEo5v1Myx91Bo1YOC5uA6IiRofGMUu3yRLkflKf8v");'></div>
+</div>
+<p class="text-[#181114] dark:text-zinc-300 text-[13px] font-normal">Savory</p>
+</div>
+<div class="flex flex-col items-center gap-2 min-w-[70px]">
+<div class="w-16 h-16 bg-zinc-100 dark:bg-zinc-800 rounded-full flex items-center justify-center p-1">
+<div class="w-full h-full rounded-full bg-cover bg-center" data-alt="Warm wool blanket" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAlGvhkjxR4OWeMy-AgRiUbsYR-VttpD3fmkRTwfJcj0PK7hYgQqoBHoyd9DKui0TtV65h2302M9siCjl1jSWNucqKdR0aCgZ56D_c0TVKvpbbn_m3dwJ4bBKGQBR9_kaO2-Wwvs1NWlvus_iFk2biGqYCpDMCymXTmNrKQp3Is8mZmbqfhjFCsm8zDK4nB2teMarHHITmd5Kkr7tJg0zEMshsyrOhIYTs-fovGdQ2wd4Q_7S6eXwuKPUWGw9IB5kKBtOSYZJJS5JPZ");'></div>
+</div>
+<p class="text-[#181114] dark:text-zinc-300 text-[13px] font-normal">Cozy</p>
+</div>
+</div>
+</div>
+<!-- Section Header -->
+<div class="flex items-center justify-between px-4 pt-6 pb-2">
+<h3 class="text-[#181114] dark:text-white text-lg font-bold tracking-tight">Today's Desires</h3>
+<span class="text-primary text-sm font-medium">Clear all</span>
+</div>
+<!-- Image Grid: Cravings Cards -->
+<div class="grid grid-cols-2 gap-4 p-4">
+<!-- Card 1 -->
+<div class="flex flex-col gap-3 pb-4 bg-white dark:bg-zinc-900 rounded-xl p-3 kawaii-shadow border border-primary/5">
+<div class="relative w-full aspect-square bg-cover bg-center rounded-xl overflow-hidden" data-alt="Juicy double cheeseburger with sesame bun" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBSwr9McXd0LmUtWJ-JoYrGrkdXnGaFvtWNXMYD9I4WiXqGosPmWa4lUCI6mgWNuHiMNTbQNLdTN8WuMr7EOh11tPHpj-K-3_GpXr5q9dcG56zNVjVud8vm4HoE-LAmIfO0uF2TaL-HA2LhrAkpsN4d8QygGXPeLRJU-A9vQnBB1jsQY0K-KwKorV64XtCazga14LAWs4ClQp8f6wOr2EbbTBafYQTReHjpg5teOpIu9ae4DHZ5QXKvlFfSVSXcJ5CuGtRZUx0L9Drr");'>
+<div class="absolute top-2 right-2 bg-white/90 dark:bg-black/50 p-1 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-sm text-primary">restaurant</span>
+</div>
+</div>
+<div class="flex flex-col gap-1">
+<p class="text-[#181114] dark:text-white text-base font-bold leading-tight">Double Burger</p>
+<p class="text-[#896175] dark:text-zinc-400 text-xs font-normal">Juicy &amp; Cheesy</p>
+</div>
+<button class="mt-1 w-full py-2 bg-primary text-white text-xs font-bold rounded-full hover:bg-primary/90 transition-colors flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-sm">add</span> Add to List
+                </button>
+</div>
+<!-- Card 2 -->
+<div class="flex flex-col gap-3 pb-4 bg-white dark:bg-zinc-900 rounded-xl p-3 kawaii-shadow border border-primary/5">
+<div class="relative w-full aspect-square bg-cover bg-center rounded-xl overflow-hidden" data-alt="Artisanal dark chocolate pieces" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuARZiRUE_YWXL8n8pO_Vz2QnJcE4iGaq8SJCwqE4Zeer9r8gyojs1admnNQ51NkjW2kdYLbT4To2I10Hvlm3FEgJDiDK7TlzIik9PExi5fmw0Zyg88vrJ51Ic5WVuP_XVlPpIF1NDvwWWYh1al8kP7JrMvC6I7yRBINDladCod7fsSBCGdsRz93pZtT3Y5XYsz_7l3PzrDQFVjp4LdOKuNLQQNEa4RYPmhlv1kDYpjyXDmQzWBtlGwIRlOQYHPgZw77K1t5EqYCfpGL");'>
+<div class="absolute top-2 right-2 bg-white/90 dark:bg-black/50 p-1 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-sm text-primary">bakery_dining</span>
+</div>
+</div>
+<div class="flex flex-col gap-1">
+<p class="text-[#181114] dark:text-white text-base font-bold leading-tight">Dark Chocolate</p>
+<p class="text-[#896175] dark:text-zinc-400 text-xs font-normal">Rich &amp; Velvety</p>
+</div>
+<button class="mt-1 w-full py-2 bg-primary text-white text-xs font-bold rounded-full hover:bg-primary/90 transition-colors flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-sm">add</span> Add to List
+                </button>
+</div>
+<!-- Card 3 -->
+<div class="flex flex-col gap-3 pb-4 bg-white dark:bg-zinc-900 rounded-xl p-3 kawaii-shadow border border-primary/5">
+<div class="relative w-full aspect-square bg-cover bg-center rounded-xl overflow-hidden" data-alt="Brown sugar boba milk tea" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCiPqZcubzjuRsojMnvkLRDB488jzb-_EPJtsaEiHbCb4wa4IpVMk_sd6I5vLHOYjF92qXCoL-Bo_I60tdcJpda94nq7OxT_rKcaklI5tDNNR8feBINpdiHnW6tG4cGBib6raJHZXkHO2NvTsJtTB9DDb8U4O7t524x2M0DypwU3WhHLJeNbAng-4OnqdU9KG7JgXfSRk7_n4VabPnK7QeKW8Gkig5hHACVGf6QsMm-lgJBHNZPrDzylnm7UzPDJUIR1VI3PbjXQ_BM");'>
+<div class="absolute top-2 right-2 bg-white/90 dark:bg-black/50 p-1 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-sm text-primary">icecream</span>
+</div>
+</div>
+<div class="flex flex-col gap-1">
+<p class="text-[#181114] dark:text-white text-base font-bold leading-tight">Boba Tea</p>
+<p class="text-[#896175] dark:text-zinc-400 text-xs font-normal">Extra Pearls</p>
+</div>
+<button class="mt-1 w-full py-2 bg-primary text-white text-xs font-bold rounded-full hover:bg-primary/90 transition-colors flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-sm">add</span> Add to List
+                </button>
+</div>
+<!-- Card 4 -->
+<div class="flex flex-col gap-3 pb-4 bg-white dark:bg-zinc-900 rounded-xl p-3 kawaii-shadow border border-primary/5">
+<div class="relative w-full aspect-square bg-cover bg-center rounded-xl overflow-hidden" data-alt="Cozy soft pink blanket" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBnRG_eVqFU0JD_yPYGK34wxnVrFBTUokxMru25AodzAseUSAAh2JfKat98JE9874jR5d9ZhVzt9aw8aHecGd-nnZ22e83A0XQZrAcrhJGJvJBv0HyhKvNpZgSBC4kwqKakt9id0Gdh7ieqmUtAm3SkABuJldV2fLADLbl__Ul3_Lne0eGi9H5ME5S6uEFt8mnqKkVzh0GGWfFHFZOiJzuKQ2QNQPFbjtSp5i-YpQmh-6LkBOdkxqJLugO0qjZy2SAc6eySHtvgQWeg");'>
+<div class="absolute top-2 right-2 bg-white/90 dark:bg-black/50 p-1 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-sm text-primary">bedtime</span>
+</div>
+</div>
+<div class="flex flex-col gap-1">
+<p class="text-[#181114] dark:text-white text-base font-bold leading-tight">Soft Blanket</p>
+<p class="text-[#896175] dark:text-zinc-400 text-xs font-normal">Warm &amp; Cozy</p>
+</div>
+<button class="mt-1 w-full py-2 bg-primary text-white text-xs font-bold rounded-full hover:bg-primary/90 transition-colors flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-sm">add</span> Add to List
+                </button>
+</div>
+</div>
+</main>
+<!-- Success Pop-up (Kawaii Articulated State) -->
+<div class="fixed bottom-24 left-1/2 -translate-x-1/2 w-[90%] max-w-sm">
+<div class="bg-[#181114] dark:bg-zinc-800 text-white p-4 rounded-full flex items-center justify-between shadow-2xl">
+<div class="flex items-center gap-3">
+<div class="size-8 bg-primary rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-lg">check_circle</span>
+</div>
+<p class="text-sm font-medium">Partner notified! 🍫🍩</p>
+</div>
+<span class="material-symbols-outlined text-zinc-400 text-lg cursor-pointer">close</span>
+</div>
+</div>
+<!-- Bottom Navigation Bar (iOS Style) -->
+<nav class="fixed bottom-0 left-0 right-0 bg-white/95 dark:bg-zinc-900/95 border-t border-zinc-100 dark:border-zinc-800 backdrop-blur-lg px-8 py-3 flex items-center justify-between z-50">
+<div class="flex flex-col items-center gap-1 text-zinc-400">
+<span class="material-symbols-outlined">calendar_today</span>
+<span class="text-[10px]">Tracker</span>
+</div>
+<div class="flex flex-col items-center gap-1 text-primary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1">cake</span>
+<span class="text-[10px]">Cravings</span>
+</div>
+<div class="flex flex-col items-center gap-1 text-zinc-400">
+<span class="material-symbols-outlined">analytics</span>
+<span class="text-[10px]">Insights</span>
+</div>
+<div class="flex flex-col items-center gap-1 text-zinc-400">
+<span class="material-symbols-outlined">person</span>
+<span class="text-[10px]">Profile</span>
+</div>
+</nav>
+<style>
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</body></html>

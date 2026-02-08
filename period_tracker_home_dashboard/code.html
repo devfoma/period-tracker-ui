@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Period Tracker Home Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              colors: {
+                "primary": "#f90680",
+                "background-light": "#fcf8fa",
+                "background-dark": "#230f19",
+              },
+              fontFamily: {
+                "display": ["Manrope"]
+              },
+              borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+            },
+          },
+        }
+    </script>
+<style>
+        .cycle-ring-gradient {
+            background: conic-gradient(from 0deg, #f90680 0%, #f90680 45%, #e6dbe0 45%, #e6dbe0 100%);
+        }
+        .soft-shadow {
+            box-shadow: 0 10px 25px -5px rgba(249, 6, 128, 0.1);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-display bg-background-light dark:bg-background-dark text-[#181114] dark:text-white min-h-screen">
+<div class="relative flex min-h-screen w-full flex-col overflow-x-hidden pb-24">
+<!-- TopAppBar -->
+<div class="flex items-center bg-white/80 dark:bg-background-dark/80 backdrop-blur-md sticky top-0 z-50 p-4 pb-2 justify-between">
+<div class="text-[#181114] dark:text-white flex size-12 shrink-0 items-center justify-center">
+<span class="material-symbols-outlined text-2xl">menu</span>
+</div>
+<h2 class="text-[#181114] dark:text-white text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center">Good morning, Sarah</h2>
+<div class="flex w-12 items-center justify-end">
+<button class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 bg-transparent text-[#181114] dark:text-white gap-2 text-base font-bold leading-normal tracking-[0.015em] min-w-0 p-0">
+<span class="material-symbols-outlined text-2xl">notifications</span>
+</button>
+</div>
+</div>
+<!-- Central Cycle Indicator Section -->
+<div class="flex flex-col items-center justify-center py-8 px-4 relative">
+<!-- Background Decorative Pattern -->
+<div class="absolute inset-0 opacity-10 pointer-events-none flex justify-center items-center overflow-hidden">
+<span class="material-symbols-outlined text-[300px] text-primary">filter_vintage</span>
+</div>
+<!-- Large Circular Indicator -->
+<div class="relative w-72 h-72 flex items-center justify-center">
+<!-- Outer Ring (Progress) -->
+<div class="absolute inset-0 rounded-full cycle-ring-gradient opacity-20"></div>
+<!-- Inner White Circle -->
+<div class="relative w-[260px] h-[260px] bg-white dark:bg-[#2d1621] rounded-full flex flex-col items-center justify-center soft-shadow border-4 border-white dark:border-[#3a1d2b]">
+<span class="text-primary text-sm font-bold tracking-widest uppercase mb-1">Follicular Phase</span>
+<h1 class="text-6xl font-extrabold text-[#181114] dark:text-white">Day 12</h1>
+<p class="text-[#8c5f75] dark:text-[#c4a1b2] text-sm mt-2 font-medium">Period in 14 days</p>
+</div>
+</div>
+</div>
+<!-- Progress Bar Component -->
+<div class="flex flex-col gap-3 p-4 mx-4 bg-white dark:bg-[#2d1621] rounded-xl soft-shadow mb-6">
+<div class="flex gap-6 justify-between items-center">
+<p class="text-[#181114] dark:text-white text-base font-medium leading-normal">Cycle Progress</p>
+<p class="text-primary text-sm font-bold leading-normal uppercase">45%</p>
+</div>
+<div class="rounded-full bg-[#e6dbe0] dark:bg-[#3d2631] h-3 overflow-hidden">
+<div class="h-full rounded-full bg-primary" style="width: 45%;"></div>
+</div>
+</div>
+<!-- HeadlineText -->
+<h3 class="text-[#181114] dark:text-white tracking-tight text-2xl font-bold leading-tight px-4 text-center pb-2">How are you feeling today?</h3>
+<!-- ButtonGroup Quick Actions -->
+<div class="flex justify-center mb-6">
+<div class="flex flex-1 gap-4 flex-wrap px-4 py-3 max-w-[480px] justify-center">
+<button class="flex min-w-[140px] flex-1 cursor-pointer items-center justify-center gap-2 overflow-hidden rounded-full h-14 px-6 bg-primary text-white text-base font-bold leading-normal tracking-[0.015em] transition-transform active:scale-95">
+<span class="material-symbols-outlined">edit_note</span>
+<span class="truncate">Log symptoms</span>
+</button>
+<button class="flex min-w-[140px] flex-1 cursor-pointer items-center justify-center gap-2 overflow-hidden rounded-full h-14 px-6 bg-primary/10 dark:bg-primary/20 text-primary text-base font-bold leading-normal tracking-[0.015em] transition-transform active:scale-95">
+<span class="material-symbols-outlined">mood</span>
+<span class="truncate">Daily mood</span>
+</button>
+</div>
+</div>
+<!-- Stats Section (Insight Cards) -->
+<div class="px-4 pb-4">
+<h4 class="text-[#181114] dark:text-white text-lg font-bold mb-3 px-1">Insights for you</h4>
+<div class="flex flex-nowrap overflow-x-auto gap-4 pb-4 scrollbar-hide">
+<div class="flex min-w-[180px] flex-1 flex-col gap-2 rounded-xl p-5 bg-[#f5f0f2] dark:bg-[#321a26] border border-pink-100 dark:border-pink-900/30">
+<div class="flex items-center gap-2 text-primary">
+<span class="material-symbols-outlined text-xl">favorite</span>
+<p class="text-xs font-bold uppercase tracking-wider">Health</p>
+</div>
+<p class="text-[#181114] dark:text-white text-lg font-bold leading-tight">High Energy</p>
+<p class="text-[#8c5f75] dark:text-[#c4a1b2] text-xs leading-normal">Great day for a workout or starting new projects!</p>
+</div>
+<div class="flex min-w-[180px] flex-1 flex-col gap-2 rounded-xl p-5 bg-[#f5f0f2] dark:bg-[#321a26] border border-pink-100 dark:border-pink-900/30">
+<div class="flex items-center gap-2 text-primary">
+<span class="material-symbols-outlined text-xl">child_care</span>
+<p class="text-xs font-bold uppercase tracking-wider">Fertility</p>
+</div>
+<p class="text-[#181114] dark:text-white text-lg font-bold leading-tight">High Chance</p>
+<p class="text-[#8c5f75] dark:text-[#c4a1b2] text-xs leading-normal">Your fertile window opens in approximately 2 days.</p>
+</div>
+</div>
+</div>
+<!-- Bottom Tab Bar -->
+<div class="fixed bottom-0 left-0 right-0 h-20 bg-white/95 dark:bg-[#1a0b12]/95 backdrop-blur-lg border-t border-pink-100 dark:border-pink-900/20 flex items-center justify-around px-4 z-50">
+<button class="flex flex-col items-center text-primary">
+<span class="material-symbols-outlined fill-[1]">home</span>
+<span class="text-[10px] font-bold mt-1">Today</span>
+</button>
+<button class="flex flex-col items-center text-[#8c5f75] dark:text-[#c4a1b2]">
+<span class="material-symbols-outlined">calendar_month</span>
+<span class="text-[10px] font-medium mt-1">Calendar</span>
+</button>
+<button class="flex flex-col items-center">
+<div class="w-14 h-14 bg-primary rounded-full flex items-center justify-center -mt-10 border-4 border-background-light dark:border-background-dark soft-shadow">
+<span class="material-symbols-outlined text-white text-3xl">add</span>
+</div>
+</button>
+<button class="flex flex-col items-center text-[#8c5f75] dark:text-[#c4a1b2]">
+<span class="material-symbols-outlined">insights</span>
+<span class="text-[10px] font-medium mt-1">Insights</span>
+</button>
+<button class="flex flex-col items-center text-[#8c5f75] dark:text-[#c4a1b2]">
+<span class="material-symbols-outlined">person</span>
+<span class="text-[10px] font-medium mt-1">Me</span>
+</button>
+</div>
+</div>
+</body></html>

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Gift Selection Screen</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&amp;family=Noto+Sans:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f04299",
+                        "background-light": "#fcfafb",
+                        "background-dark": "#221019",
+                    },
+                    fontFamily: {
+                        "display": ["Noto Serif", "serif"],
+                        "sans": ["Noto Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Noto Serif', serif;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-[#181114] dark:text-white transition-colors duration-300">
+<div class="relative flex min-h-screen w-full flex-col max-w-[480px] mx-auto overflow-x-hidden border-x border-gray-100 dark:border-gray-800">
+<!-- TopAppBar / Navigation -->
+<div class="sticky top-0 z-50 flex items-center bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md p-4 pb-2 justify-between">
+<div class="flex items-center gap-1 cursor-pointer group">
+<span class="material-symbols-outlined text-primary" style="font-size: 20px;">chevron_left</span>
+<span class="text-sm font-medium text-primary font-sans">Dashboard</span>
+</div>
+<h2 class="text-[#181114] dark:text-white text-lg font-bold leading-tight tracking-[-0.015em] absolute left-1/2 -translate-x-1/2">Gift Selection</h2>
+<div class="flex w-12 items-center justify-end">
+<button class="flex items-center justify-center rounded-full w-10 h-10 bg-transparent text-[#181114] dark:text-white">
+<span class="material-symbols-outlined">shopping_bag</span>
+</button>
+</div>
+</div>
+<!-- Headline Section -->
+<div class="px-4 pt-6 pb-2">
+<h1 class="text-[#181114] dark:text-white text-[28px] font-bold leading-tight font-display">Thoughtful gestures for her</h1>
+<p class="text-primary/80 dark:text-primary text-sm font-medium font-sans mt-2 flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">calendar_today</span>
+                Day 26: A little something to brighten her day
+            </p>
+</div>
+<!-- Tabs -->
+<div class="mt-4">
+<div class="flex border-b border-[#e6dbe0] dark:border-gray-800 px-4 gap-8 overflow-x-auto no-scrollbar">
+<a class="flex flex-col items-center justify-center border-b-[3px] border-b-primary pb-3 pt-2 whitespace-nowrap" href="#">
+<p class="text-[#181114] dark:text-white text-sm font-bold leading-normal tracking-[0.015em]">Floral Arrangements</p>
+</a>
+<a class="flex flex-col items-center justify-center border-b-[3px] border-b-transparent text-[#896175] dark:text-gray-400 pb-3 pt-2 whitespace-nowrap" href="#">
+<p class="text-sm font-bold leading-normal tracking-[0.015em]">Artisan Chocolates</p>
+</a>
+<a class="flex flex-col items-center justify-center border-b-[3px] border-b-transparent text-[#896175] dark:text-gray-400 pb-3 pt-2 whitespace-nowrap" href="#">
+<p class="text-sm font-bold leading-normal tracking-[0.015em]">Wellness Kits</p>
+</a>
+</div>
+</div>
+<!-- ImageGrid / Product List -->
+<div class="grid grid-cols-2 gap-4 p-4">
+<!-- Product 1 -->
+<div class="flex flex-col gap-3 pb-6 group">
+<div class="relative w-full aspect-[3/4] rounded-xl overflow-hidden shadow-sm">
+<div class="absolute inset-0 bg-center bg-no-repeat bg-cover transition-transform duration-500 group-hover:scale-105" data-alt="Soft pink peonies in a glass vase" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCUxV2HOEPDdlWF450G94zSN0RbgUSNUmzKqWnWKJN3EStOkWtw_EYrI_cjcViRe2hZHoiC4dmcr4kI7A42FoJZliBrLnfz6rFg9-xLkjl_Nrpqzj-wuLIgvQHZrrbaFS5ceh4zVzQhMcJZI43Cxeow_VMJ_EMtW3ujy6DvrbwAfID-fDngkKVOVOeR2YD2uIRaTRyRKjQoS_LC39ivpuCCaTO_5C-rZjwx5AQ5VLUCL_57ap_e4m2wz9m-S-1P2mBkeDtfii5ATsns");'>
+</div>
+</div>
+<div class="flex flex-col gap-1">
+<p class="text-[#181114] dark:text-white text-base font-bold font-display">Blushing Peonies</p>
+<p class="text-[#896175] dark:text-gray-400 text-xs font-sans">Premium Stem Collection</p>
+<div class="flex items-center justify-between mt-1">
+<p class="text-primary text-lg font-bold font-display">$45.00</p>
+<button class="bg-primary text-white px-3 py-1.5 rounded-lg text-xs font-bold font-sans hover:bg-primary/90 transition-colors">Order Now</button>
+</div>
+</div>
+</div>
+<!-- Product 2 -->
+<div class="flex flex-col gap-3 pb-6 group">
+<div class="relative w-full aspect-[3/4] rounded-xl overflow-hidden shadow-sm">
+<div class="absolute inset-0 bg-center bg-no-repeat bg-cover transition-transform duration-500 group-hover:scale-105" data-alt="Deep red luxury roses bouquet" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB17ueeS9Xna68odTiYGdn6qWAdrdWTqH-KlG0ZuxhdnTr-5t9lu3w_MrGqojIciXuRCt_ll2-IPjGIXwWPrFWFnamG_IDWzsjTZXmkCrh7Y2RJWTMGeDG5nIdOHmxVpI5-f8EppDZVgLAtiZxqJuTuvatY-Xqd_x3hQU_cbRjisKP2TsSP2EVdYqqeeYXsTLSKH6IHIM4QSF0_rgTiilnpyIXL8AHX3kz0Tv0xeRtkbToeboI7JYaWw0IojcAeWTztm-XQMnJldpPs");'>
+</div>
+</div>
+<div class="flex flex-col gap-1">
+<p class="text-[#181114] dark:text-white text-base font-bold font-display">Classic Red Roses</p>
+<p class="text-[#896175] dark:text-gray-400 text-xs font-sans">Dozen Long Stemmed</p>
+<div class="flex items-center justify-between mt-1">
+<p class="text-primary text-lg font-bold font-display">$60.00</p>
+<button class="bg-primary text-white px-3 py-1.5 rounded-lg text-xs font-bold font-sans hover:bg-primary/90 transition-colors">Order Now</button>
+</div>
+</div>
+</div>
+<!-- Product 3 -->
+<div class="flex flex-col gap-3 pb-6 group">
+<div class="relative w-full aspect-[3/4] rounded-xl overflow-hidden shadow-sm">
+<div class="absolute inset-0 bg-center bg-no-repeat bg-cover transition-transform duration-500 group-hover:scale-105" data-alt="Assorted artisan dark chocolate truffles" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBdgMmLtSGb6t0kMiFPcNwtGYchkzlrd1RPHm8HyaYYVhh69bZnPhUEPJKlhPfW_F4NhVTx4b9psJ5rYc0ORVTKQCkzd9EUL2DRRxJj5YmHg0qid_Jm3ebPTF_unjVREpGYcrMUZQ_4BYvz13__sPwGu8d4SGEjR9B_-6rig1KlORXIVaz2JjMnrshjqgpPppgYugKgTLM9lQXL4ifZmMh69TvRxlHjFSaxTXispS6Y5DapkCpUquifyePCN3MFwmlB25SzdgcF8qk5");'>
+</div>
+</div>
+<div class="flex flex-col gap-1">
+<p class="text-[#181114] dark:text-white text-base font-bold font-display">Dark Truffle Box</p>
+<p class="text-[#896175] dark:text-gray-400 text-xs font-sans">12pc Handcrafted Selection</p>
+<div class="flex items-center justify-between mt-1">
+<p class="text-primary text-lg font-bold font-display">$38.00</p>
+<button class="bg-primary text-white px-3 py-1.5 rounded-lg text-xs font-bold font-sans hover:bg-primary/90 transition-colors">Order Now</button>
+</div>
+</div>
+</div>
+<!-- Product 4 -->
+<div class="flex flex-col gap-3 pb-6 group">
+<div class="relative w-full aspect-[3/4] rounded-xl overflow-hidden shadow-sm">
+<div class="absolute inset-0 bg-center bg-no-repeat bg-cover transition-transform duration-500 group-hover:scale-105" data-alt="Wildflower mix in pastel colors" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDCfB5neOEu4U0OPa2OtRVF8Z57nymYmmx9HqOfCg4ItlcVvECRpW6esqG18cRDYd9tr0SdqMr_jBHvG7aoXj4jSWeYadcVpVIAast7eGOG_Lav1U6nYXdKNghmjSYBYIRNpDtxUwRY_qBLKz4Uc_wDRNDQeCLKfNkVWnJ6Gv7hKDX1FPcS6xZ8_Kxdy2buXVl0tq04AxFDjfSLSVmqSp8m-Ir5qqSthDfqLvBqrymON5qVWBYo-QpzaRmeQUpJS7ftbhuOk7Szxn0s");'>
+</div>
+</div>
+<div class="flex flex-col gap-1">
+<p class="text-[#181114] dark:text-white text-base font-bold font-display">Pastel Garden Mix</p>
+<p class="text-[#896175] dark:text-gray-400 text-xs font-sans">Seasonal Wildflowers</p>
+<div class="flex items-center justify-between mt-1">
+<p class="text-primary text-lg font-bold font-display">$52.00</p>
+<button class="bg-primary text-white px-3 py-1.5 rounded-lg text-xs font-bold font-sans hover:bg-primary/90 transition-colors">Order Now</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Bottom Spacing for mobile UI -->
+<div class="h-24 bg-transparent"></div>
+<!-- Quick View Mini Banner (Optional/Refined) -->
+<div class="fixed bottom-6 left-1/2 -translate-x-1/2 w-[90%] max-w-[400px] bg-white/90 dark:bg-background-dark/90 backdrop-blur shadow-xl rounded-2xl border border-primary/10 p-4 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">auto_awesome</span>
+</div>
+<div>
+<p class="text-xs font-sans text-gray-500 dark:text-gray-400">Personalized Suggestion</p>
+<p class="text-sm font-bold font-display dark:text-white">The "Comfort" Bundle</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-primary">chevron_right</span>
+</div>
+</div>
+<style>
+        /* Hide scrollbar for Chrome, Safari and Opera */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        /* Hide scrollbar for IE, Edge and Firefox */
+        .no-scrollbar {
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;  /* Firefox */
+        }
+    </style>
+</body></html>

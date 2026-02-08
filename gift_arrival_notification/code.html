@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Gift Arrival Notification</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#f04299",
+            "background-light": "#f8f6f7",
+            "background-dark": "#221019",
+          },
+          fontFamily: {
+            "display": ["Plus Jakarta Sans", "sans-serif"]
+          },
+          borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+        },
+      },
+    }
+  </script>
+<style>
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+    .ios-glass {
+      background: rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+    }
+    .dark .ios-glass {
+      background: rgba(34, 16, 25, 0.7);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .wallpaper-gradient {
+      background: linear-gradient(135deg, #fce7f3 0%, #fae8ff 50%, #f0abfc 100%);
+    }
+    .dark .wallpaper-gradient {
+      background: linear-gradient(135deg, #221019 0%, #4a1d33 50%, #181114 100%);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark min-h-screen flex justify-center items-center p-4">
+<!-- Mobile Device Mockup -->
+<div class="relative w-full max-w-[390px] h-[844px] wallpaper-gradient rounded-xl shadow-2xl overflow-hidden border-[8px] border-gray-800 dark:border-gray-900">
+<!-- Top Bar (iOS Style) -->
+<div class="flex items-center px-8 pt-4 pb-2 justify-between w-full z-10 relative">
+<div class="text-[#181114] dark:text-white text-sm font-bold">9:41</div>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[18px] text-[#181114] dark:text-white">signal_cellular_4_bar</span>
+<span class="material-symbols-outlined text-[18px] text-[#181114] dark:text-white">wifi</span>
+<span class="material-symbols-outlined text-[22px] text-[#181114] dark:text-white">battery_full</span>
+</div>
+</div>
+<!-- Date and Time -->
+<div class="flex flex-col items-center mt-12 mb-8 z-10 relative">
+<p class="text-[#181114] dark:text-white/90 text-lg font-medium">Tuesday, June 14</p>
+<h1 class="text-[#181114] dark:text-white text-[84px] font-bold tracking-tight leading-none mt-1">09:41</h1>
+<div class="flex items-center gap-2 mt-2 px-4 py-1.5 ios-glass rounded-full text-xs font-semibold text-[#181114] dark:text-white/80">
+<span class="material-symbols-outlined text-[14px]">lock</span>
+        Locked
+      </div>
+</div>
+<!-- Notification Area -->
+<div class="px-4 mt-12 z-10 relative">
+<!-- iOS Push Notification Card -->
+<div class="ios-glass p-4 rounded-xl shadow-lg flex flex-col gap-3">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="size-6 bg-primary rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-[16px]">favorite</span>
+</div>
+<p class="text-[#181114]/60 dark:text-white/60 text-[12px] font-bold uppercase tracking-wider">Period Tracker • now</p>
+</div>
+<span class="material-symbols-outlined text-[#181114]/40 dark:text-white/40 text-[18px]">expand_more</span>
+</div>
+<div class="flex flex-col gap-1">
+<p class="text-[#181114] dark:text-white text-base font-bold leading-tight">A surprise is on the way! 🌸</p>
+<p class="text-[#181114]/80 dark:text-white/80 text-sm leading-normal">
+            Leo sent you something to brighten your day. Tap to see!
+          </p>
+</div>
+<div class="flex justify-between items-center mt-1">
+<div class="flex -space-x-2">
+<div class="size-8 rounded-full border-2 border-white dark:border-background-dark bg-cover bg-center" data-alt="Avatar of the partner sender" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD3a7TasK9tkObW8LaNbYBvJEqADaFtwEgtR2y4UCqEbKz1nWFIJxcauUDCWZZ2-Xfb3hdlG0BxWhK79p2JLHhcgWS_8B6vsqqJ5PrqD37Dsz5f-SgpDtnJdk3XY12gGbE6133z_PYWeob27EdhBvC5TySOuU4e6VXdY6wQyEnOtkp-k1IT-Nk5-joeKM_DxZSbxXw83mP7bQrmltKiKOphudBdd98s3_2-xgBSzBmSWQEltSYD3r32jVtjIr-MwrVbeP4gtrZARoQn');"></div>
+</div>
+<button class="flex items-center justify-center rounded-full h-8 px-4 bg-primary text-white gap-1.5 text-xs font-bold transition-transform active:scale-95 shadow-md">
+<span class="material-symbols-outlined text-[16px]">celebration</span>
+<span>Open App</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Background Decorative Elements (Aesthetic Blooms) -->
+<div class="absolute top-1/2 left-0 w-full h-full pointer-events-none opacity-40 dark:opacity-20">
+<div class="absolute top-10 left-[-10%] w-48 h-48 bg-primary/20 rounded-full blur-[60px]"></div>
+<div class="absolute bottom-20 right-[-10%] w-64 h-64 bg-primary/30 rounded-full blur-[80px]"></div>
+</div>
+<!-- Bottom Action Area -->
+<div class="absolute bottom-12 w-full flex flex-col items-center gap-8 z-10 px-8">
+<div class="flex w-full justify-between items-center">
+<!-- Flashlight icon -->
+<div class="size-12 rounded-full ios-glass flex items-center justify-center text-[#181114] dark:text-white">
+<span class="material-symbols-outlined text-[24px]">flashlight_on</span>
+</div>
+<!-- Camera icon -->
+<div class="size-12 rounded-full ios-glass flex items-center justify-center text-[#181114] dark:text-white">
+<span class="material-symbols-outlined text-[24px]">photo_camera</span>
+</div>
+</div>
+<div class="flex flex-col items-center gap-1">
+<div class="w-32 h-1.5 bg-[#181114]/20 dark:bg-white/20 rounded-full mb-2"></div>
+<p class="text-[#181114]/60 dark:text-white/60 text-xs font-semibold tracking-wide">Swipe up to open</p>
+</div>
+</div>
+<!-- Home Indicator -->
+<div class="absolute bottom-2 left-1/2 -translate-x-1/2 w-32 h-1 bg-[#181114] dark:bg-white rounded-full"></div>
+</div>
+</body></html>

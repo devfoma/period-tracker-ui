@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Add Custom Craving</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Spline+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ee2b8c",
+                        "background-light": "#fdf8fa",
+                        "background-dark": "#221019",
+                    },
+                    fontFamily: {
+                        "display": ["Spline Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Spline Sans', sans-serif;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark min-h-screen flex flex-col items-center">
+<!-- Main Container (Phone Mockup) -->
+<div class="relative flex h-full min-h-screen w-full max-w-[430px] flex-col bg-white dark:bg-background-dark shadow-2xl overflow-x-hidden border-x border-gray-100 dark:border-gray-800">
+<!-- TopAppBar -->
+<div class="flex items-center bg-white dark:bg-background-dark p-4 pb-2 justify-between sticky top-0 z-10">
+<div class="text-gray-800 dark:text-gray-100 flex size-12 shrink-0 items-center justify-start">
+<span class="material-symbols-outlined cursor-pointer">close</span>
+</div>
+<h2 class="text-gray-900 dark:text-white text-lg font-bold leading-tight tracking-tight flex-1 text-center">Add Custom Craving</h2>
+<div class="flex w-12 items-center justify-end">
+<button class="flex cursor-pointer items-center justify-center rounded-full h-10 w-10 bg-primary/10 text-primary">
+<span class="material-symbols-outlined">check</span>
+</button>
+</div>
+</div>
+<!-- Content Area -->
+<div class="flex-1 overflow-y-auto pb-32">
+<!-- HeadlineText -->
+<div class="px-4 pt-6">
+<h3 class="text-gray-900 dark:text-white tracking-tight text-2xl font-bold leading-tight">What's on your mind?</h3>
+<p class="text-gray-500 dark:text-gray-400 text-sm mt-1">Let us know what would make you feel better today.</p>
+</div>
+<!-- TextField -->
+<div class="flex flex-wrap items-end gap-4 px-4 py-6">
+<label class="flex flex-col min-w-40 flex-1">
+<p class="text-gray-800 dark:text-gray-200 text-base font-semibold leading-normal pb-3">I'm really craving...</p>
+<textarea class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-2xl text-gray-900 dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary/20 border-2 border-primary/20 bg-primary/5 focus:border-primary min-h-36 placeholder:text-primary/40 p-4 text-lg font-normal leading-relaxed transition-all" placeholder="Double fudge brownies, a weighted blanket, or maybe just a nap..."></textarea>
+</label>
+</div>
+<!-- SectionHeader: Category -->
+<div class="px-4">
+<h3 class="text-gray-900 dark:text-white text-lg font-bold leading-tight tracking-tight pt-2">Category</h3>
+</div>
+<!-- SegmentedButtons -->
+<div class="flex px-4 py-3">
+<div class="flex h-12 flex-1 items-center justify-center rounded-full bg-gray-100 dark:bg-gray-800 p-1.5 gap-1">
+<label class="flex cursor-pointer h-full grow items-center justify-center overflow-hidden rounded-full px-2 has-[:checked]:bg-white dark:has-[:checked]:bg-gray-700 has-[:checked]:shadow-sm has-[:checked]:text-primary text-gray-500 dark:text-gray-400 text-sm font-semibold transition-all">
+<span class="truncate">Food</span>
+<input checked="" class="hidden" name="category" type="radio" value="Food"/>
+</label>
+<label class="flex cursor-pointer h-full grow items-center justify-center overflow-hidden rounded-full px-2 has-[:checked]:bg-white dark:has-[:checked]:bg-gray-700 has-[:checked]:shadow-sm has-[:checked]:text-primary text-gray-500 dark:text-gray-400 text-sm font-semibold transition-all">
+<span class="truncate">Comfort</span>
+<input class="hidden" name="category" type="radio" value="Comfort"/>
+</label>
+<label class="flex cursor-pointer h-full grow items-center justify-center overflow-hidden rounded-full px-2 has-[:checked]:bg-white dark:has-[:checked]:bg-gray-700 has-[:checked]:shadow-sm has-[:checked]:text-primary text-gray-500 dark:text-gray-400 text-sm font-semibold transition-all">
+<span class="truncate">Activity</span>
+<input class="hidden" name="category" type="radio" value="Activity"/>
+</label>
+</div>
+</div>
+<!-- Photo Upload Area (Custom Component) -->
+<div class="px-4 py-4">
+<h3 class="text-gray-900 dark:text-white text-lg font-bold leading-tight tracking-tight pb-3">Show us what you're dreaming of</h3>
+<div class="relative group cursor-pointer">
+<div class="flex flex-col items-center justify-center w-full h-44 border-2 border-dashed border-primary/30 bg-primary/5 rounded-2xl hover:bg-primary/10 transition-colors">
+<div class="bg-white dark:bg-gray-800 p-3 rounded-full shadow-md mb-2">
+<span class="material-symbols-outlined text-primary text-3xl">add_a_photo</span>
+</div>
+<p class="text-primary font-semibold text-sm">Snap a pic or upload</p>
+<p class="text-gray-400 text-xs mt-1">Help your partner get it right!</p>
+</div>
+</div>
+</div>
+<!-- Quick Suggestion Chips (Extra delight) -->
+<div class="px-4 py-2">
+<div class="flex gap-2 overflow-x-auto no-scrollbar">
+<span class="bg-white dark:bg-gray-800 border border-gray-100 dark:border-gray-700 px-4 py-2 rounded-full text-xs font-medium text-gray-600 dark:text-gray-300 whitespace-nowrap shadow-sm">🍦 Ice Cream</span>
+<span class="bg-white dark:bg-gray-800 border border-gray-100 dark:border-gray-700 px-4 py-2 rounded-full text-xs font-medium text-gray-600 dark:text-gray-300 whitespace-nowrap shadow-sm">🧸 Hugs</span>
+<span class="bg-white dark:bg-gray-800 border border-gray-100 dark:border-gray-700 px-4 py-2 rounded-full text-xs font-medium text-gray-600 dark:text-gray-300 whitespace-nowrap shadow-sm">🍿 Movie Night</span>
+<span class="bg-white dark:bg-gray-800 border border-gray-100 dark:border-gray-700 px-4 py-2 rounded-full text-xs font-medium text-gray-600 dark:text-gray-300 whitespace-nowrap shadow-sm">🍫 Chocolate</span>
+</div>
+</div>
+</div>
+<!-- Bottom Action Bar -->
+<div class="p-6 bg-white dark:bg-background-dark border-t border-gray-100 dark:border-gray-800 sticky bottom-0">
+<button class="w-full h-16 bg-primary hover:bg-primary/90 text-white rounded-full text-lg font-bold shadow-lg shadow-primary/25 flex items-center justify-center gap-3 transition-transform active:scale-[0.98]">
+<span class="material-symbols-outlined">favorite</span>
+                Share with Partners
+            </button>
+</div>
+</div>
+<!-- Background Decoration -->
+<div class="fixed top-0 left-0 w-full h-full -z-10 opacity-20 pointer-events-none">
+<div class="absolute top-[-10%] right-[-10%] w-[500px] h-[500px] bg-primary/20 rounded-full blur-[120px]"></div>
+<div class="absolute bottom-[-10%] left-[-10%] w-[400px] h-[400px] bg-primary/10 rounded-full blur-[100px]"></div>
+</div>
+</body></html>

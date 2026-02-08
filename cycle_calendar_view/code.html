@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Cycle Calendar View</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f90680",
+                        "background-light": "#f8f5f7",
+                        "background-dark": "#230f19",
+                        "soft-pink": "#fff0f6",
+                        "fertile": "#ffe3ec"
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .fill-icon {
+            font-variation-settings: 'FILL' 1;
+        }
+        body {
+            font-family: 'Manrope', sans-serif;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark min-h-screen flex justify-center">
+<div class="relative flex h-full min-h-screen w-full max-w-[430px] flex-col bg-background-light dark:bg-background-dark overflow-x-hidden shadow-2xl">
+<!-- Header Section -->
+<header class="sticky top-0 z-10 bg-white/80 dark:bg-background-dark/80 backdrop-blur-md px-4 pt-6 pb-4">
+<div class="flex items-center justify-between">
+<button class="flex size-10 items-center justify-center rounded-full hover:bg-gray-100 dark:hover:bg-white/10">
+<span class="material-symbols-outlined text-[#181114] dark:text-white">chevron_left</span>
+</button>
+<div class="text-center">
+<h2 class="text-[#181114] dark:text-white text-lg font-extrabold leading-tight tracking-tight">October 2023</h2>
+<p class="text-primary text-[10px] font-bold uppercase tracking-widest">Follicular Phase</p>
+</div>
+<button class="flex size-10 items-center justify-center rounded-full bg-primary text-white shadow-lg shadow-primary/30">
+<span class="material-symbols-outlined">add</span>
+</button>
+</div>
+</header>
+<!-- Calendar Picker Section -->
+<main class="flex-1 overflow-y-auto pb-24">
+<div class="px-4 py-2">
+<div class="bg-white dark:bg-gray-900 rounded-3xl p-4 shadow-sm border border-pink-50 dark:border-white/5">
+<div class="grid grid-cols-7 mb-2">
+<p class="text-gray-400 text-[11px] font-bold flex h-8 w-full items-center justify-center uppercase">S</p>
+<p class="text-gray-400 text-[11px] font-bold flex h-8 w-full items-center justify-center uppercase">M</p>
+<p class="text-gray-400 text-[11px] font-bold flex h-8 w-full items-center justify-center uppercase">T</p>
+<p class="text-gray-400 text-[11px] font-bold flex h-8 w-full items-center justify-center uppercase">W</p>
+<p class="text-gray-400 text-[11px] font-bold flex h-8 w-full items-center justify-center uppercase">T</p>
+<p class="text-gray-400 text-[11px] font-bold flex h-8 w-full items-center justify-center uppercase">F</p>
+<p class="text-gray-400 text-[11px] font-bold flex h-8 w-full items-center justify-center uppercase">S</p>
+<!-- Empty cells for start of month -->
+<div class="h-12 w-full"></div>
+<div class="h-12 w-full"></div>
+<div class="h-12 w-full"></div>
+<!-- Calendar Days -->
+<button class="h-12 w-full text-[#181114] dark:text-white text-sm font-semibold">1</button>
+<button class="h-12 w-full text-[#181114] dark:text-white text-sm font-semibold">2</button>
+<button class="h-12 w-full text-[#181114] dark:text-white text-sm font-semibold relative">
+                            3<div class="absolute bottom-2 left-1/2 -translate-x-1/2 size-1 bg-blue-400 rounded-full"></div>
+</button>
+<button class="h-12 w-full text-[#181114] dark:text-white text-sm font-semibold">4</button>
+<!-- Past Period Days -->
+<button class="h-12 w-full bg-primary/10 dark:bg-primary/20 text-primary text-sm font-bold flex items-center justify-center">
+<div class="size-9 flex items-center justify-center rounded-full bg-primary text-white">5</div>
+</button>
+<button class="h-12 w-full bg-primary/10 dark:bg-primary/20 text-primary text-sm font-bold flex items-center justify-center">
+<div class="size-9 flex items-center justify-center rounded-full bg-primary text-white">6</div>
+</button>
+<button class="h-12 w-full bg-primary/10 dark:bg-primary/20 text-primary text-sm font-bold flex items-center justify-center">
+<div class="size-9 flex items-center justify-center rounded-full bg-primary text-white">7</div>
+</button>
+<button class="h-12 w-full bg-primary/10 dark:bg-primary/20 text-primary text-sm font-bold flex items-center justify-center">
+<div class="size-9 flex items-center justify-center rounded-full bg-primary text-white">8</div>
+</button>
+<button class="h-12 w-full bg-primary/10 dark:bg-primary/20 text-primary text-sm font-bold flex items-center justify-center">
+<div class="size-9 flex items-center justify-center rounded-full bg-primary text-white">9</div>
+</button>
+<button class="h-12 w-full text-[#181114] dark:text-white text-sm font-semibold">10</button>
+<button class="h-12 w-full text-[#181114] dark:text-white text-sm font-semibold">11</button>
+<!-- Selected Day -->
+<button class="h-12 w-full text-white text-sm font-bold flex items-center justify-center border-2 border-primary rounded-xl mx-0.5">
+<div class="size-9 flex items-center justify-center rounded-full bg-black dark:bg-white text-white dark:text-black">12</div>
+</button>
+<button class="h-12 w-full text-[#181114] dark:text-white text-sm font-semibold">13</button>
+<button class="h-12 w-full text-[#181114] dark:text-white text-sm font-semibold">14</button>
+<button class="h-12 w-full text-[#181114] dark:text-white text-sm font-semibold">15</button>
+<button class="h-12 w-full text-[#181114] dark:text-white text-sm font-semibold">16</button>
+<!-- Fertile Window -->
+<button class="h-12 w-full bg-fertile dark:bg-primary/10 text-primary text-sm font-semibold flex items-center justify-center">17</button>
+<button class="h-12 w-full bg-fertile dark:bg-primary/10 text-primary text-sm font-semibold flex items-center justify-center">18</button>
+<!-- Ovulation Day -->
+<button class="h-12 w-full bg-fertile dark:bg-primary/10 text-primary text-sm font-bold flex flex-col items-center justify-center">
+<span>19</span>
+<span class="material-symbols-outlined text-[10px] fill-icon">favorite</span>
+</button>
+<button class="h-12 w-full bg-fertile dark:bg-primary/10 text-primary text-sm font-semibold flex items-center justify-center">20</button>
+<button class="h-12 w-full bg-fertile dark:bg-primary/10 text-primary text-sm font-semibold flex items-center justify-center">21</button>
+<button class="h-12 w-full text-[#181114] dark:text-white text-sm font-semibold">22</button>
+<button class="h-12 w-full text-[#181114] dark:text-white text-sm font-semibold">23</button>
+<button class="h-12 w-full text-[#181114] dark:text-white text-sm font-semibold">24</button>
+<button class="h-12 w-full text-[#181114] dark:text-white text-sm font-semibold">25</button>
+<button class="h-12 w-full text-[#181114] dark:text-white text-sm font-semibold">26</button>
+<button class="h-12 w-full text-[#181114] dark:text-white text-sm font-semibold">27</button>
+<button class="h-12 w-full text-[#181114] dark:text-white text-sm font-semibold">28</button>
+<!-- Predicted Period -->
+<button class="h-12 w-full text-primary/60 text-sm font-semibold flex items-center justify-center">
+<div class="size-8 rounded-full border-2 border-dashed border-primary/40 flex items-center justify-center">29</div>
+</button>
+<button class="h-12 w-full text-primary/60 text-sm font-semibold flex items-center justify-center">
+<div class="size-8 rounded-full border-2 border-dashed border-primary/40 flex items-center justify-center">30</div>
+</button>
+<button class="h-12 w-full text-primary/60 text-sm font-semibold flex items-center justify-center">
+<div class="size-8 rounded-full border-2 border-dashed border-primary/40 flex items-center justify-center">31</div>
+</button>
+</div>
+<!-- Legend -->
+<div class="mt-4 flex flex-wrap gap-4 pt-4 border-t border-gray-100 dark:border-white/5">
+<div class="flex items-center gap-1.5">
+<div class="size-2.5 rounded-full bg-primary"></div>
+<span class="text-[10px] font-medium text-gray-500 uppercase tracking-wider">Period</span>
+</div>
+<div class="flex items-center gap-1.5">
+<div class="size-2.5 rounded-full bg-fertile dark:bg-primary/20"></div>
+<span class="text-[10px] font-medium text-gray-500 uppercase tracking-wider">Fertile</span>
+</div>
+<div class="flex items-center gap-1.5">
+<div class="size-2.5 rounded-full border border-dashed border-primary/40"></div>
+<span class="text-[10px] font-medium text-gray-500 uppercase tracking-wider">Predicted</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Detailed Summary Section -->
+<section class="mt-2 px-4 space-y-4">
+<div class="flex items-center justify-between">
+<h3 class="text-[#181114] dark:text-white text-lg font-extrabold tracking-tight">Today, Oct 12</h3>
+<button class="text-primary text-xs font-bold px-3 py-1 bg-primary/10 rounded-full">Edit Log</button>
+</div>
+<!-- Cycle Insight Card -->
+<div class="bg-gradient-to-br from-primary/5 to-soft-pink dark:from-primary/20 dark:to-background-dark p-5 rounded-3xl border border-primary/10">
+<div class="flex gap-4 items-start">
+<div class="p-3 bg-white dark:bg-gray-800 rounded-2xl shadow-sm">
+<span class="material-symbols-outlined text-primary fill-icon">lightbulb</span>
+</div>
+<div>
+<p class="text-sm font-bold text-[#181114] dark:text-white mb-1">Follicular Phase</p>
+<p class="text-xs text-gray-600 dark:text-gray-300 leading-relaxed">Estrogen levels are rising. You might notice a boost in energy and clearer skin today!</p>
+</div>
+</div>
+</div>
+<!-- Symptoms Chips -->
+<div class="space-y-3">
+<p class="text-[11px] font-bold text-gray-400 uppercase tracking-widest pl-1">Logged Symptoms</p>
+<div class="flex gap-2 flex-wrap">
+<div class="flex h-10 items-center gap-x-2 rounded-full bg-white dark:bg-gray-900 border border-gray-100 dark:border-white/10 pl-2 pr-4 shadow-sm">
+<div class="bg-pink-100 dark:bg-primary/30 size-7 rounded-full flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-sm">bolt</span>
+</div>
+<p class="text-[#181114] dark:text-white text-sm font-semibold">Cramps: Mild</p>
+</div>
+<div class="flex h-10 items-center gap-x-2 rounded-full bg-white dark:bg-gray-900 border border-gray-100 dark:border-white/10 pl-2 pr-4 shadow-sm">
+<div class="bg-yellow-100 dark:bg-yellow-500/30 size-7 rounded-full flex items-center justify-center text-yellow-600">
+<span class="material-symbols-outlined text-sm">sentiment_satisfied</span>
+</div>
+<p class="text-[#181114] dark:text-white text-sm font-semibold">Mood: Happy</p>
+</div>
+<div class="flex h-10 items-center gap-x-2 rounded-full bg-white dark:bg-gray-900 border border-gray-100 dark:border-white/10 pl-2 pr-4 shadow-sm">
+<div class="bg-blue-100 dark:bg-blue-500/30 size-7 rounded-full flex items-center justify-center text-blue-600">
+<span class="material-symbols-outlined text-sm">opacity</span>
+</div>
+<p class="text-[#181114] dark:text-white text-sm font-semibold">Flow: None</p>
+</div>
+</div>
+</div>
+<!-- Progress Bars -->
+<div class="space-y-4 pt-2">
+<div class="bg-white dark:bg-gray-900 p-4 rounded-3xl border border-gray-100 dark:border-white/10 shadow-sm">
+<div class="flex flex-col gap-3">
+<div class="flex justify-between items-center">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-blue-500">water_drop</span>
+<p class="text-[#181114] dark:text-white text-sm font-bold">Water Intake</p>
+</div>
+<p class="text-primary text-xs font-bold">8/10 glasses</p>
+</div>
+<div class="h-2.5 w-full bg-gray-100 dark:bg-white/10 rounded-full overflow-hidden">
+<div class="h-full bg-primary rounded-full" style="width: 80%;"></div>
+</div>
+</div>
+</div>
+<div class="bg-white dark:bg-gray-900 p-4 rounded-3xl border border-gray-100 dark:border-white/10 shadow-sm">
+<div class="flex flex-col gap-3">
+<div class="flex justify-between items-center">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-indigo-500">bedtime</span>
+<p class="text-[#181114] dark:text-white text-sm font-bold">Sleep</p>
+</div>
+<p class="text-primary text-xs font-bold">7.5/8 hrs</p>
+</div>
+<div class="h-2.5 w-full bg-gray-100 dark:bg-white/10 rounded-full overflow-hidden">
+<div class="h-full bg-indigo-500 rounded-full" style="width: 93%;"></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Bottom Navigation (iOS Style) -->
+<nav class="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-[430px] bg-white/90 dark:bg-background-dark/90 backdrop-blur-xl border-t border-gray-100 dark:border-white/5 px-8 pt-3 pb-8 flex justify-between items-center z-20">
+<button class="flex flex-col items-center gap-1 text-primary">
+<span class="material-symbols-outlined fill-icon">calendar_month</span>
+<span class="text-[10px] font-bold">Cycle</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-gray-400">
+<span class="material-symbols-outlined">insights</span>
+<span class="text-[10px] font-bold">Insights</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-gray-400">
+<span class="material-symbols-outlined">forum</span>
+<span class="text-[10px] font-bold">Community</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-gray-400">
+<span class="material-symbols-outlined">person</span>
+<span class="text-[10px] font-bold">Profile</span>
+</button>
+</nav>
+<!-- Dynamic Home Indicator -->
+<div class="fixed bottom-1 left-1/2 -translate-x-1/2 w-32 h-1.5 bg-gray-200 dark:bg-white/10 rounded-full z-30"></div>
+</div>
+</body></html>

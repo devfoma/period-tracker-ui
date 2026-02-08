@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Onboarding - Select App Goal</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Spline+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ee2b8c",
+                        "background-light": "#f8f6f7",
+                        "background-dark": "#221019",
+                    },
+                    fontFamily: {
+                        "display": ["Spline Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: "Spline Sans", sans-serif;
+        }
+        .selected-card {
+            border-color: #ee2b8c !important;
+            box-shadow: 0 0 15px rgba(238, 43, 140, 0.2);
+            background-color: rgba(238, 43, 140, 0.05);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark min-h-screen flex flex-col">
+<!-- Top App Bar -->
+<div class="relative flex h-auto w-full flex-col bg-background-light dark:bg-background-dark overflow-x-hidden">
+<div class="flex items-center p-4 pb-2 justify-between">
+<div class="text-[#181114] dark:text-white flex size-12 shrink-0 items-center justify-start cursor-pointer">
+<span class="material-symbols-outlined">arrow_back_ios</span>
+</div>
+<div class="text-[#181114] dark:text-white font-semibold text-sm">Step 3 of 5</div>
+<div class="size-12 shrink-0"></div> <!-- Spacer for balance -->
+</div>
+</div>
+<!-- Page Indicators -->
+<div class="flex w-full flex-row items-center justify-center gap-3 py-2">
+<div class="h-1.5 w-1.5 rounded-full bg-primary/20"></div>
+<div class="h-1.5 w-1.5 rounded-full bg-primary/20"></div>
+<div class="h-1.5 w-8 rounded-full bg-primary"></div>
+<div class="h-1.5 w-1.5 rounded-full bg-primary/20"></div>
+<div class="h-1.5 w-1.5 rounded-full bg-primary/20"></div>
+</div>
+<!-- Headline Text -->
+<div class="px-4">
+<h1 class="text-[#181114] dark:text-white tracking-tight text-[32px] font-bold leading-tight text-center pb-2 pt-8">
+            What's your goal?
+        </h1>
+<p class="text-[#896175] dark:text-[#c0a4b1] text-center text-base px-8">
+            We'll customize your experience based on your needs.
+        </p>
+</div>
+<!-- Selection Cards -->
+<div class="flex-1 px-4 pt-8 flex flex-col gap-4 max-w-md mx-auto w-full">
+<!-- Track Cycle Card -->
+<div class="group cursor-pointer">
+<div class="flex items-center justify-between gap-4 rounded-xl border-2 border-transparent bg-white dark:bg-[#2d1a24] p-5 shadow-sm transition-all duration-200 selected-card">
+<div class="flex flex-col gap-1 flex-[2_2_0px]">
+<p class="text-[#181114] dark:text-white text-lg font-bold leading-tight">Track Cycle</p>
+<p class="text-[#896175] dark:text-[#c0a4b1] text-sm font-normal leading-normal">Understand your rhythm</p>
+</div>
+<div class="flex size-14 items-center justify-center rounded-full bg-pink-50 dark:bg-pink-900/30 text-primary">
+<span class="material-symbols-outlined text-3xl">local_florist</span>
+</div>
+</div>
+</div>
+<!-- Plan Pregnancy Card -->
+<div class="group cursor-pointer">
+<div class="flex items-center justify-between gap-4 rounded-xl border-2 border-gray-100 dark:border-gray-800 bg-white dark:bg-[#2d1a24] p-5 shadow-sm transition-all duration-200 hover:border-primary/30">
+<div class="flex flex-col gap-1 flex-[2_2_0px]">
+<p class="text-[#181114] dark:text-white text-lg font-bold leading-tight">Plan Pregnancy</p>
+<p class="text-[#896175] dark:text-[#c0a4b1] text-sm font-normal leading-normal">Find your fertile window</p>
+</div>
+<div class="flex size-14 items-center justify-center rounded-full bg-pink-50 dark:bg-pink-900/30 text-primary">
+<span class="material-symbols-outlined text-3xl">child_care</span>
+</div>
+</div>
+</div>
+<!-- Health Insights Card -->
+<div class="group cursor-pointer">
+<div class="flex items-center justify-between gap-4 rounded-xl border-2 border-gray-100 dark:border-gray-800 bg-white dark:bg-[#2d1a24] p-5 shadow-sm transition-all duration-200 hover:border-primary/30">
+<div class="flex flex-col gap-1 flex-[2_2_0px]">
+<p class="text-[#181114] dark:text-white text-lg font-bold leading-tight">Health Insights</p>
+<p class="text-[#896175] dark:text-[#c0a4b1] text-sm font-normal leading-normal">Deep dive into symptoms</p>
+</div>
+<div class="flex size-14 items-center justify-center rounded-full bg-pink-50 dark:bg-pink-900/30 text-primary">
+<span class="material-symbols-outlined text-3xl">auto_awesome</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Decorative Illustration/Image -->
+<div class="px-4 py-6 flex justify-center">
+<div class="w-full max-w-[200px] aspect-square rounded-full bg-gradient-to-br from-primary/10 to-transparent flex items-center justify-center opacity-60">
+<div class="w-2/3 h-2/3 bg-center bg-no-repeat bg-contain" data-alt="Soft pink abstract heart shape illustration" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA435Lg9ModhzwJxDKW4fKtqEBts9CJuTL_n9DP9lmtmYMNXWdziJFCTsY7e21GnY-qrR5DMnaFxu0b9aIgFD8V6jc4MS9h2Qd9HpC5hAa_aQF4ek91_rjopMw1gHGaWCdX9BEOgtZEympVq343kBjMq7bYX-QBcVEN1kAkVwWxcG51Vt7D5VFGLfFDkDhuH6nMRwJ76iH8qqvlPdajyVXOoe8JNXSP4OP9FnTqYexnnVw2uEY2JPgpx-tzum2fouC4NkxKZcxay0Cl");'></div>
+</div>
+</div>
+<!-- Footer Action -->
+<div class="p-6 mt-auto max-w-md mx-auto w-full">
+<button class="w-full bg-primary hover:bg-primary/90 text-white font-bold py-4 rounded-full shadow-lg shadow-primary/20 transition-all active:scale-[0.98]">
+            Continue
+        </button>
+<div class="h-8"></div> <!-- Safe area spacing -->
+</div>
+</body></html>

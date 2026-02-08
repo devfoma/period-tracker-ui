@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Bloom - Welcome</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ee2b8c",
+                        "background-light": "#f8f6f7",
+                        "background-dark": "#221019",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: "Plus Jakarta Sans", sans-serif;
+        }
+        .kawaii-gradient {
+            background: linear-gradient(180deg, #fff5f8 0%, #ffe4f0 100%);
+        }
+        .dark .kawaii-gradient {
+            background: linear-gradient(180deg, #221019 0%, #2d1622 100%);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display antialiased">
+<div class="relative flex min-h-screen w-full flex-col overflow-x-hidden kawaii-gradient">
+<!-- Top Status Bar Area (iOS Style) -->
+<div class="flex items-center p-4 pb-2 justify-end h-12">
+<button class="text-primary font-semibold text-sm px-4 py-2 rounded-full hover:bg-primary/10 transition-colors">
+                Skip
+            </button>
+</div>
+<!-- Hero Illustration Section -->
+<div class="flex-grow flex flex-col items-center justify-center px-6">
+<div class="@container w-full max-w-sm">
+<div class="aspect-square w-full rounded-xl overflow-hidden relative shadow-2xl shadow-primary/10">
+<div class="absolute inset-0 bg-cover bg-center" data-alt="Illustration of diverse smiling women in pastel colors" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB63HnqsSceMW018di3zObNmLnlcKcNdhn9uolStfpnDtjG4-blonSAQZJUxQXC668hQWFY8ywYE8p1E9fiMasP7q9TaB3lcVD3icKB3jQ76p4Darq-yBm6E8XnfbR_bKFU--CCM9ONoFybpk_K4pA-z41KWkucr8Zbx7W5ljhG-QReDnigR-Qjpe3XvrhDPxnRjtUHClsQcQLerdVFZtn-KCWEuwR4o0SFc4XQ_lEdC8fvfely6rK3R2yK2S-RqUGM2ezIBOpehYhL");'>
+</div>
+<!-- Overlay to soften the image and match kawaii aesthetic -->
+<div class="absolute inset-0 bg-primary/10 mix-blend-soft-light"></div>
+</div>
+</div>
+</div>
+<!-- Text Content Area -->
+<div class="flex flex-col items-center px-8 pt-8 pb-4">
+<h1 class="text-[#181114] dark:text-white tracking-tight text-[36px] font-extrabold leading-tight text-center">
+                Welcome to Bloom
+            </h1>
+<p class="text-[#181114]/70 dark:text-white/70 text-lg font-medium leading-relaxed mt-4 text-center max-w-xs">
+                Your personal guide to understanding your body and cycle with love.
+            </p>
+</div>
+<!-- Page Indicators -->
+<div class="flex w-full flex-row items-center justify-center gap-2 py-6">
+<div class="h-2 w-6 rounded-full bg-primary"></div>
+<div class="h-2 w-2 rounded-full bg-primary/20"></div>
+<div class="h-2 w-2 rounded-full bg-primary/20"></div>
+</div>
+<!-- Action Section -->
+<div class="px-6 pb-12 flex flex-col gap-4">
+<button class="w-full bg-primary text-white text-lg font-bold py-5 rounded-full shadow-lg shadow-primary/30 active:scale-[0.98] transition-transform">
+                Get Started
+            </button>
+<button class="w-full flex items-center justify-center gap-2 py-2 text-[#181114]/60 dark:text-white/60 font-semibold text-sm">
+                Already have an account? 
+                <span class="text-primary">Log In</span>
+</button>
+</div>
+<!-- iOS Home Indicator Spacing -->
+<div class="h-6 bg-transparent"></div>
+</div>
+</body></html>

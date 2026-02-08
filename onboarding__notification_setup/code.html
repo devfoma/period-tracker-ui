@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Spline+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ee2b8c",
+                        "background-light": "#fdf8fa",
+                        "background-dark": "#221019",
+                    },
+                    fontFamily: {
+                        "display": ["Spline Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display antialiased">
+<div class="relative flex min-h-screen w-full max-w-[430px] mx-auto flex-col overflow-x-hidden shadow-2xl bg-white dark:bg-background-dark">
+<!-- Top Navigation / Progress -->
+<div class="flex w-full flex-row items-center justify-center gap-2 py-8">
+<div class="h-1.5 w-1.5 rounded-full bg-primary/20"></div>
+<div class="h-1.5 w-1.5 rounded-full bg-primary/20"></div>
+<div class="h-1.5 w-1.5 rounded-full bg-primary/20"></div>
+<div class="h-1.5 w-1.5 rounded-full bg-primary/20"></div>
+<div class="h-1.5 w-6 rounded-full bg-primary"></div>
+</div>
+<!-- Hero Illustration Section -->
+<div class="flex w-full grow flex-col items-center justify-center px-8">
+<div class="relative flex aspect-square w-full max-w-[280px] items-center justify-center rounded-full bg-primary/5 dark:bg-primary/10">
+<!-- Decorative Circles -->
+<div class="absolute inset-0 rounded-full border-2 border-dashed border-primary/10 animate-[spin_20s_linear_infinite]"></div>
+<!-- Main Illustration Container -->
+<div class="relative flex h-48 w-48 items-center justify-center rounded-3xl bg-gradient-to-br from-pink-50 to-white dark:from-pink-900/20 dark:to-background-dark shadow-xl">
+<span class="material-symbols-outlined text-[100px] text-primary" data-icon="notifications_active">notifications_active</span>
+<!-- The "Bow" Decoration -->
+<div class="absolute -top-4 -right-2 flex h-14 w-14 items-center justify-center rounded-full bg-primary text-white shadow-lg rotate-12">
+<span class="material-symbols-outlined text-3xl" data-icon="featured_seasonal_and_gifts">featured_seasonal_and_gifts</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Text Content -->
+<div class="px-8 pt-10 pb-6">
+<h1 class="text-slate-900 dark:text-white tracking-tight text-[32px] font-bold leading-tight text-center">
+                Never be surprised again.
+            </h1>
+<p class="text-slate-600 dark:text-slate-400 text-lg font-normal leading-relaxed text-center mt-4">
+                Enable notifications for period predictions and health tips tailored for you.
+            </p>
+</div>
+<!-- Actions Section -->
+<div class="flex flex-col gap-3 px-8 pb-12 pt-4">
+<!-- Primary Action -->
+<button class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-14 px-5 bg-primary text-white text-lg font-bold leading-normal tracking-wide shadow-lg shadow-primary/20 hover:scale-[1.02] transition-transform active:scale-[0.98]">
+<span class="truncate">Enable Notifications</span>
+</button>
+<!-- Secondary Action -->
+<button class="flex cursor-pointer items-center justify-center h-12 text-slate-400 dark:text-slate-500 text-base font-medium hover:text-primary transition-colors">
+<span class="truncate">Maybe Later</span>
+</button>
+</div>
+<!-- Mock Image placeholders as requested (decorative elements) -->
+<div class="hidden">
+<div data-alt="Soft pink gradient background with abstract shapes" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuACYXUV-KnSiyRfwzAe7O1xlyIzUgDWTXri8FijHSZyMlUaPhJL44JtdNNILZh9lN6i41h1R7vMqmA5z7Fh9idFxZScN9zqXIXOp9hPzALcNA7TMe-lZOO8uYxFa-9lHPQ6PmuxPCZfuTsj5wA_OH-Z42zluyIvMZLD6NhzNq4IEcrrtf7Aao3I9rPXOF9wC2_swLJcVfPOgXNu8_rhP0pE5441x4Y01TrVjAvfQQYj_Q8UE3wckFKNLRlUAgbn-do1VYns_x7mfxzY');"></div>
+<div data-alt="Minimalist illustration of a notification bell with a bow" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBPViqq_uNhrdImPj5iVoQHl6NNqRDAsvBRaUbXwo9vujydYTROYHw7u9TiJJx6hvX4jELJZAdyDuDGLizfjY3QkE7ua0W1H9ojVHexiN2P92mM7Odeb7GtWiAM-kDp95FTjoEnMtqRE89jnrDT98_fm9ZmWTcwGPZgFMvE5YAQwAFc0rGkiIqTDSq5b6HY1r3kBK5OOTgErNNMIKN2VPpJT-AThM_D1zWovfWak5I9_erBDtuHkvwBnw5Gmp7C_Lz-sZQCn5b3I9us');"></div>
+</div>
+</div>
+</body></html>

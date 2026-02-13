@@ -49,10 +49,7 @@ export default function PartnerDashboardScreen() {
         </TouchableOpacity>
       </View>
 
-      <ScrollView
-        contentContainerStyle={{ paddingHorizontal: 16 }}
-        showsVerticalScrollIndicator={false}
-      >
+      <ScrollView className="px-4" showsVerticalScrollIndicator={false}>
         {/* Countdown Card */}
         <View className="bg-brand rounded-3xl mt-4 overflow-hidden">
           <View className="items-center pt-10 pb-6">

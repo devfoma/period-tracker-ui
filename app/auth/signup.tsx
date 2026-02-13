@@ -22,7 +22,7 @@ export default function SignUpScreen() {
     >
       <ScrollView
         className="flex-1"
-        contentContainerStyle={{ flexGrow: 1, paddingHorizontal: 24 }}
+        contentContainerClassName="grow px-6"
         keyboardShouldPersistTaps="handled"
       >
         <TouchableOpacity className="mt-14 w-11 h-11 items-center justify-center" onPress={() => router.back()}>

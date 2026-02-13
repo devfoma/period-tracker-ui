@@ -38,7 +38,7 @@ export default function GiftRevealScreen() {
       </View>
 
       <ScrollView
-        contentContainerStyle={{ paddingHorizontal: 16, paddingBottom: 40 }}
+        contentContainerClassName="px-4 pb-10"
         showsVerticalScrollIndicator={false}
       >
         {/* Gift Image Area */}

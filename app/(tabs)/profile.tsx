@@ -8,8 +8,8 @@ const menuItems = [
   { icon: "person-outline", label: "Edit Profile" },
   { icon: "share", label: "Share My Cycle", route: "/share-cycle" },
   { icon: "restaurant", label: "My Cravings", route: "/cravings" },
-  { icon: "people-outline", label: "Partner Dashboard", route: "/partner-dashboard" },
-  { icon: "card-giftcard", label: "Gift Selection", route: "/gift-selection" },
+  { icon: "people-outline", label: "Partner Dashboard", route: "/partner/dashboard" },
+  { icon: "card-giftcard", label: "Gift Selection", route: "/partner/gift-selection" },
   { icon: "notifications-none", label: "Notification Settings" },
   { icon: "lock-outline", label: "Privacy & Security" },
   { icon: "help-outline", label: "Help & Support" },
@@ -21,7 +21,7 @@ export default function ProfileScreen() {
 
   return (
     <View className="flex-1 bg-surface">
-      <ScrollView contentContainerStyle={{ paddingTop: 80 }} showsVerticalScrollIndicator={false}>
+      <ScrollView contentContainerClassName="pt-20 pb-32" showsVerticalScrollIndicator={false}>
         {/* Avatar */}
         <View className="items-center py-6">
           <View className="w-20 h-20 rounded-full bg-brand items-center justify-center mb-4 shadow-lg shadow-brand/30">
@@ -66,7 +66,6 @@ export default function ProfileScreen() {
         </View>
 
         <Text className="text-center text-xs text-black/20 mt-8">Her Circle v1.0.0</Text>
-        <View className="h-32" />
       </ScrollView>
     </View>
   );

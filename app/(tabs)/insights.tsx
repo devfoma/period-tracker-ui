@@ -27,7 +27,7 @@ export default function InsightsScreen() {
         <Text className="text-sm text-content-secondary mt-1">Personalized tips for Day {cycleDay}</Text>
       </View>
 
-      <ScrollView contentContainerStyle={{ paddingHorizontal: 16, gap: 16 }} showsVerticalScrollIndicator={false}>
+      <ScrollView className="px-4" contentContainerClassName="gap-4 pb-32" showsVerticalScrollIndicator={false}>
         {/* Summary */}
         <View className="bg-brand rounded-4xl p-5 shadow-lg shadow-brand/30">
           <View className="flex-row justify-between items-center mb-4">
@@ -39,8 +39,8 @@ export default function InsightsScreen() {
               <Text className="text-sm font-bold text-white">{progress}%</Text>
             </View>
           </View>
-          <View className="h-2 rounded-full bg-white/20 overflow-hidden">
-            <View className="h-full rounded-full bg-white" style={{ width: `${progress}%` }} />
+            <View className="h-2 rounded-full bg-white/20 overflow-hidden">
+            <View className="h-full rounded-full bg-white" style={{ width: `${progress}%` as any }} />
           </View>
         </View>
 
@@ -48,10 +48,10 @@ export default function InsightsScreen() {
         {insights.map((ins, i) => (
           <View key={i} className="bg-white rounded-3xl p-5 border border-line gap-2">
             <View className="flex-row items-center gap-2 mb-1">
-              <View className="w-9 h-9 rounded-xl items-center justify-center" style={{ backgroundColor: `${ins.color}15` }}>
+              <View className="w-9 h-9 rounded-xl items-center justify-center" style={{ backgroundColor: `${ins.color}15` as any }}>
                 <MaterialIcons name={ins.icon} size={22} color={ins.color} />
               </View>
-              <Text className="text-[10px] font-bold tracking-widest" style={{ color: ins.color }}>{ins.label}</Text>
+              <Text className="text-[10px] font-bold tracking-widest" style={{ color: ins.color } as any}>{ins.label}</Text>
             </View>
             <Text className="text-lg font-bold text-content">{ins.title}</Text>
             <Text className="text-sm text-content-secondary leading-5">{ins.body}</Text>
@@ -74,7 +74,6 @@ export default function InsightsScreen() {
           </View>
         </View>
 
-        <View className="h-32" />
       </ScrollView>
     </View>
   );

@@ -13,7 +13,7 @@ export default function ShareCycleScreen() {
     <View className="flex-1 bg-surface pt-12">
       <Header title="Share My Cycle" showBack />
 
-      <ScrollView contentContainerStyle={{ paddingHorizontal: 16 }} showsVerticalScrollIndicator={false}>
+      <ScrollView className="px-4" showsVerticalScrollIndicator={false}>
         <Text className="text-2xl font-extrabold text-content mt-6 tracking-tight">Shared Partners</Text>
         <Text className="text-sm text-content-secondary mt-2 mb-6 leading-5">
           Keep your loved ones in the loop with your cycle updates.

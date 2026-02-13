@@ -51,7 +51,7 @@ export default function CalendarScreen() {
     if (fertile) return (
       <TouchableOpacity key={day} className="w-[14.28%] h-12 items-center justify-center bg-surface-fertile" onPress={() => setSelDay(day)}>
         <Text className="text-sm font-semibold text-brand">{day}</Text>
-        {ovul && <MaterialIcons name="favorite" size={8} color="#f90680" style={{ position: "absolute", bottom: 4 }} />}
+        {ovul && <MaterialIcons name="favorite" size={8} color="#f90680" className="absolute bottom-1" />}
       </TouchableOpacity>
     );
     if (td) return (
@@ -84,7 +84,7 @@ export default function CalendarScreen() {
         </TouchableOpacity>
       </View>
 
-      <ScrollView contentContainerStyle={{ paddingHorizontal: 16 }} showsVerticalScrollIndicator={false}>
+      <ScrollView className="px-4" contentContainerClassName="pb-32" showsVerticalScrollIndicator={false}>
         {/* Calendar */}
         <View className="bg-white rounded-4xl p-4 shadow-sm border border-line">
           <View className="flex-row mb-2">
@@ -167,12 +167,11 @@ export default function CalendarScreen() {
                 <Text className="text-xs font-bold text-brand">{t.val}</Text>
               </View>
               <View className="h-2.5 rounded-full bg-black/5 overflow-hidden">
-                <View className="h-full rounded-full" style={{ width: `${t.pct}%`, backgroundColor: t.color }} />
+                <View className="h-full rounded-full" style={{ width: `${t.pct}%` as any, backgroundColor: t.color }} />
               </View>
             </View>
           ))}
         </View>
-        <View className="h-32" />
       </ScrollView>
     </View>
   );

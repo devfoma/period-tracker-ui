@@ -48,10 +48,10 @@ export default function CycleLengthScreen() {
         {/* Custom Slider */}
         <View className="px-4 relative">
           <View className="h-2 bg-[#e6dbe0] rounded-full relative">
-            <View className="absolute left-0 top-0 h-2 bg-brand rounded-full" style={{ width: `${pct}%` }} />
+            <View className="absolute left-0 top-0 h-2 bg-brand rounded-full" style={{ width: `${pct}%` as any }} />
             <View
               className="absolute -top-3 w-8 h-8 rounded-full bg-brand"
-              style={{ left: `${pct}%`, marginLeft: -16 }}
+              style={{ left: `${pct}%` as any, marginLeft: -16 }}
             />
           </View>
           <View className="flex-row justify-between mt-4">

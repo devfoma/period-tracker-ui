@@ -51,7 +51,7 @@ export default function LastPeriodScreen() {
       <Header showBack stepText="Step 2 of 5" />
       <ProgressDots total={5} current={1} />
 
-      <ScrollView className="flex-1" contentContainerStyle={{ paddingHorizontal: 24 }} showsVerticalScrollIndicator={false}>
+      <ScrollView className="flex-1 px-6" showsVerticalScrollIndicator={false}>
         <Text className="text-3xl font-bold text-content text-center pt-8 tracking-tight">
           When did your last period start?
         </Text>

@@ -1,18 +1,9 @@
 import React, { useState } from "react";
-import {
-  View,
-  Text,
-  ScrollView,
-  TouchableOpacity,
-  Dimensions,
-} from "react-native";
+import { View, Text, ScrollView, TouchableOpacity } from "react-native";
 import { useRouter } from "expo-router";
 import { MaterialIcons } from "@expo/vector-icons";
 import { Header } from "@/components/ui/Header";
 import type { GiftCategory } from "@/types/interfaces";
-
-const { width } = Dimensions.get("window");
-const cardW = (width - 48 - 16) / 2;
 
 const tabs: { id: GiftCategory; label: string }[] = [
   { id: "flowers", label: "Floral Arrangements" },
@@ -88,10 +79,7 @@ export default function GiftSelectionScreen() {
         }
       />
 
-      <ScrollView
-        contentContainerStyle={{ paddingHorizontal: 16 }}
-        showsVerticalScrollIndicator={false}
-      >
+      <ScrollView className="px-4" showsVerticalScrollIndicator={false}>
         <Text className="text-3xl font-extrabold text-content mt-4 tracking-tight leading-9">
           Thoughtful gestures for her
         </Text>
@@ -106,7 +94,7 @@ export default function GiftSelectionScreen() {
         <ScrollView
           horizontal
           showsHorizontalScrollIndicator={false}
-          contentContainerStyle={{ gap: 0 }}
+          contentContainerClassName="gap-0"
         >
           {tabs.map((t) => {
             const active = activeTab === t.id;
@@ -135,8 +123,7 @@ export default function GiftSelectionScreen() {
           {filtered.map((g) => (
             <View
               key={g.id}
-              className="bg-white rounded-2xl overflow-hidden border border-line"
-              style={{ width: cardW }}
+              className="bg-white rounded-2xl overflow-hidden border border-line w-[47%]"
             >
               <View className="w-full h-40 bg-surface-soft items-center justify-center">
                 <MaterialIcons

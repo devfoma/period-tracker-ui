@@ -1,13 +1,10 @@
 import React, { useState } from "react";
-import { View, Text, ScrollView, TouchableOpacity, Dimensions } from "react-native";
+import { View, Text, ScrollView, TouchableOpacity } from "react-native";
 import { useRouter } from "expo-router";
 import { MaterialIcons } from "@expo/vector-icons";
 import { Header } from "@/components/ui/Header";
 import { ToggleSwitch } from "@/components/ui/ToggleSwitch";
 import type { CravingCategory } from "@/types/interfaces";
-
-const { width } = Dimensions.get("window");
-const cardW = (width - 48 - 16) / 2;
 
 const categories: { id: CravingCategory; label: string; icon: string }[] = [
   { id: "sweet", label: "Sweet", icon: "cake" },
@@ -41,7 +38,7 @@ export default function CravingsScreen() {
         <TouchableOpacity><MaterialIcons name="favorite" size={24} color="#f90680" /></TouchableOpacity>
       } />
 
-      <ScrollView contentContainerStyle={{ paddingHorizontal: 16 }} showsVerticalScrollIndicator={false}>
+      <ScrollView className="px-4" showsVerticalScrollIndicator={false}>
         {/* Notify */}
         <View className="bg-white rounded-3xl p-5 flex-row justify-between items-center mt-4 border border-line shadow-sm">
           <View>
@@ -56,7 +53,7 @@ export default function CravingsScreen() {
 
         {/* Categories */}
         <Text className="text-xl font-extrabold text-content tracking-tight mt-6 mb-3">{"Feeling..."}</Text>
-        <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={{ gap: 16, paddingVertical: 4 }}>
+        <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerClassName="gap-4 py-1">
           {categories.map((c) => {
             const sel = selectedCat === c.id;
             return (
@@ -80,7 +77,7 @@ export default function CravingsScreen() {
           {cravingsData.map((item) => {
             const added = addedItems.includes(item.id);
             return (
-              <View key={item.id} className="bg-white rounded-2xl overflow-hidden border border-line" style={{ width: cardW }}>
+              <View key={item.id} className="bg-white rounded-2xl overflow-hidden border border-line w-[47%]">
                 <View className="w-full h-36 bg-surface-soft items-center justify-center relative">
                   <MaterialIcons name={item.icon as any} size={48} color="#f90680" />
                   <View className="absolute top-2 right-2 w-7 h-7 rounded-full bg-white items-center justify-center shadow-sm">

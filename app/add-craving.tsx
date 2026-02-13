@@ -25,7 +25,7 @@ export default function AddCravingScreen() {
         </TouchableOpacity>
       </View>
 
-      <ScrollView contentContainerStyle={{ paddingHorizontal: 16 }} showsVerticalScrollIndicator={false}>
+      <ScrollView className="px-4" showsVerticalScrollIndicator={false}>
         <Text className="text-2xl font-extrabold text-content mt-6 tracking-tight">{"What's on your mind?"}</Text>
         <Text className="text-sm text-content-secondary mt-2 leading-5">
           Let us know what would make you feel better today.
@@ -62,7 +62,7 @@ export default function AddCravingScreen() {
           <Text className="text-xs text-content-secondary">Help your partner get it right!</Text>
         </TouchableOpacity>
 
-        <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={{ gap: 8, paddingVertical: 20 }}>
+        <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerClassName="gap-2 py-5">
           {quick.map((q) => (
             <TouchableOpacity key={q} className="bg-white rounded-full px-4 py-2 border border-line" onPress={() => setText(q)}>
               <Text className="text-xs font-medium text-content">{q}</Text>

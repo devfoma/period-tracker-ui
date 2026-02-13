@@ -110,10 +110,7 @@ export default function PartnerCravingsScreen() {
         </TouchableOpacity>
       </View>
 
-      <ScrollView
-        contentContainerStyle={{ paddingHorizontal: 16 }}
-        showsVerticalScrollIndicator={false}
-      >
+      <ScrollView className="px-4" showsVerticalScrollIndicator={false}>
         {/* Urgent Mission Card */}
         <View className="bg-[#facc15] rounded-3xl p-5 mt-4 overflow-hidden">
           <View className="flex-row items-center gap-2 mb-2">
@@ -162,7 +159,7 @@ export default function PartnerCravingsScreen() {
             {/* Image placeholder */}
             <View
               className="w-full h-44 items-center justify-center"
-              style={{ backgroundColor: `${c.color}20` }}
+              style={{ backgroundColor: `${c.color}20` as any }}
             >
               <MaterialIcons name={c.icon as any} size={56} color={c.color} />
             </View>

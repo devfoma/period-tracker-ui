@@ -9,7 +9,7 @@ export default function WelcomeScreen() {
   const router = useRouter();
 
   return (
-    <LinearGradient colors={["#fff5f8", "#ffe4f0"]} style={{ flex: 1 }}>
+    <LinearGradient colors={["#fff5f8", "#ffe4f0"]} className="flex-1">
       {/* Skip */}
       <View className="flex-row justify-end px-4 pt-14">
         <TouchableOpacity

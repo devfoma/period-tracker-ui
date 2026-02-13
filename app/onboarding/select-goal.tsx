@@ -31,7 +31,7 @@ export default function SelectGoalScreen() {
       <Header showBack stepText="Step 3 of 5" />
       <ProgressDots total={5} current={2} />
 
-      <ScrollView className="flex-1" contentContainerStyle={{ paddingHorizontal: 16 }} showsVerticalScrollIndicator={false}>
+      <ScrollView className="flex-1 px-4" showsVerticalScrollIndicator={false}>
         <Text className="text-3xl font-bold text-content text-center pt-8 tracking-tight">
           {"What's your goal?"}
         </Text>

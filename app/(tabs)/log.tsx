@@ -72,7 +72,7 @@ export default function DailyLogScreen() {
         </TouchableOpacity>
       </View>
 
-      <ScrollView contentContainerStyle={{ paddingHorizontal: 16 }} showsVerticalScrollIndicator={false}>
+      <ScrollView className="px-4" contentContainerClassName="pb-32" showsVerticalScrollIndicator={false}>
         {/* Mood */}
         <View className="flex-row justify-between items-center pt-6 pb-2">
           <Text className="text-xl font-extrabold text-content tracking-tight">{"How's your mood?"}</Text>
@@ -98,8 +98,8 @@ export default function DailyLogScreen() {
         <Text className="text-xl font-extrabold text-content tracking-tight pt-6 pb-2">Flow Intensity</Text>
         <View className="bg-white rounded-2xl border border-line p-6 my-4">
           <View className="h-2 bg-brand-light rounded-full relative mb-8">
-            <View className="absolute left-0 top-0 h-2 bg-brand rounded-full" style={{ width: `${flowLevel}%` }} />
-            <View className="absolute -top-[9px] w-[26px] h-[26px] rounded-full bg-white border-4 border-brand shadow" style={{ left: `${flowLevel}%`, marginLeft: -13 }} />
+            <View className="absolute left-0 top-0 h-2 bg-brand rounded-full" style={{ width: `${flowLevel}%` as any }} />
+            <View className="absolute -top-[9px] w-[26px] h-[26px] rounded-full bg-white border-4 border-brand shadow" style={{ left: `${flowLevel}%` as any, marginLeft: -13 }} />
           </View>
           <View className="flex-row justify-between">
             {["NONE", "MEDIUM", "HEAVY"].map((l, i) => (
@@ -138,7 +138,6 @@ export default function DailyLogScreen() {
           textAlignVertical="top"
         />
 
-        <View className="h-32" />
       </ScrollView>
 
       {/* Save */}

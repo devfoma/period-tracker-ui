@@ -33,7 +33,7 @@ export default function HomeScreen() {
         </TouchableOpacity>
       </View>
 
-      <ScrollView contentContainerStyle={{ paddingHorizontal: 16 }} showsVerticalScrollIndicator={false}>
+      <ScrollView className="px-4" contentContainerClassName="pb-32" showsVerticalScrollIndicator={false}>
         {/* Cycle Ring */}
         <View className="items-center py-8">
           <View className="w-72 h-72 rounded-full items-center justify-center relative">
@@ -57,7 +57,7 @@ export default function HomeScreen() {
             <Text className="text-xs font-bold text-brand uppercase">{progress}%</Text>
           </View>
           <View className="h-3 rounded-full bg-[#e6dbe0] overflow-hidden">
-            <View className="h-full rounded-full bg-brand" style={{ width: `${progress}%` }} />
+            <View className="h-full rounded-full bg-brand" style={{ width: `${progress}%` as any }} />
           </View>
         </View>
 
@@ -81,7 +81,7 @@ export default function HomeScreen() {
 
         {/* Insights */}
         <Text className="text-lg font-bold text-content mb-3">Insights for you</Text>
-        <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={{ gap: 16, paddingBottom: 16 }}>
+        <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerClassName="gap-4 pb-4">
           <View className="w-44 bg-[#f5f0f2] rounded-2xl p-5 gap-2 border border-line">
             <View className="flex-row items-center gap-2">
               <MaterialIcons name="favorite" size={18} color="#f90680" />
@@ -104,7 +104,6 @@ export default function HomeScreen() {
           </View>
         </ScrollView>
 
-        <View className="h-32" />
       </ScrollView>
     </View>
   );

@@ -2,6 +2,7 @@ import React from "react";
 import { Stack } from "expo-router";
 import { StatusBar } from "expo-status-bar";
 import { AppProvider } from "@/context/AppContext";
+import "../global.css";
 
 export default function RootLayout() {
   return (

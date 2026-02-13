@@ -1,176 +1,123 @@
 import React, { useState } from "react";
-import {
-  View,
-  Text,
-  StyleSheet,
-  ScrollView,
-  TouchableOpacity,
-  Dimensions,
-} from "react-native";
+import { View, Text, ScrollView, TouchableOpacity, Dimensions } from "react-native";
 import { useRouter } from "expo-router";
 import { MaterialIcons } from "@expo/vector-icons";
-import { Colors, FontSize, FontWeight, Spacing, BorderRadius } from "@/constants/theme";
 import { Header } from "@/components/ui/Header";
 import { ToggleSwitch } from "@/components/ui/ToggleSwitch";
-import { CravingCategory } from "@/constants/types";
+import type { CravingCategory } from "@/types/interfaces";
 
 const { width } = Dimensions.get("window");
-const cardWidth = (width - 48 - 16) / 2;
+const cardW = (width - 48 - 16) / 2;
 
-type CategoryItem = {
-  id: CravingCategory;
-  label: string;
-  icon: keyof typeof MaterialIcons.glyphMap;
-};
-
-const categories: CategoryItem[] = [
+const categories: { id: CravingCategory; label: string; icon: string }[] = [
   { id: "sweet", label: "Sweet", icon: "cake" },
   { id: "salty", label: "Salty", icon: "bakery-dining" },
   { id: "cool", label: "Cool", icon: "local-cafe" },
   { id: "savory", label: "Savory", icon: "local-pizza" },
 ];
 
-type CravingItem = {
-  id: string;
-  name: string;
-  description: string;
-  icon: keyof typeof MaterialIcons.glyphMap;
-  addedToList: boolean;
-};
-
-const cravingsData: CravingItem[] = [
-  { id: "1", name: "Double Burger", description: "Juicy & Cheesy", icon: "lunch-dining", addedToList: false },
-  { id: "2", name: "Dark Chocolate", description: "Rich & Velvety", icon: "cookie", addedToList: false },
-  { id: "3", name: "Boba Tea", description: "Extra Pearls", icon: "local-cafe", addedToList: false },
-  { id: "4", name: "Soft Blanket", description: "Warm & Cozy", icon: "nights-stay", addedToList: false },
+const cravingsData = [
+  { id: "1", name: "Double Burger", desc: "Juicy & Cheesy", icon: "lunch-dining" },
+  { id: "2", name: "Dark Chocolate", desc: "Rich & Velvety", icon: "cookie" },
+  { id: "3", name: "Boba Tea", desc: "Extra Pearls", icon: "local-cafe" },
+  { id: "4", name: "Soft Blanket", desc: "Warm & Cozy", icon: "nights-stay" },
 ];
 
 export default function CravingsScreen() {
   const router = useRouter();
   const [notifyPartners, setNotifyPartners] = useState(true);
-  const [selectedCategory, setSelectedCategory] = useState<CravingCategory>("sweet");
+  const [selectedCat, setSelectedCat] = useState<CravingCategory>("sweet");
   const [addedItems, setAddedItems] = useState<string[]>([]);
-  const [showNotification, setShowNotification] = useState(false);
+  const [toast, setToast] = useState(false);
 
-  const toggleAddToList = (id: string) => {
-    setAddedItems((prev) =>
-      prev.includes(id) ? prev.filter((i) => i !== id) : [...prev, id]
-    );
-    if (notifyPartners) {
-      setShowNotification(true);
-      setTimeout(() => setShowNotification(false), 3000);
-    }
+  const toggle = (id: string) => {
+    setAddedItems((p) => p.includes(id) ? p.filter((i) => i !== id) : [...p, id]);
+    if (notifyPartners) { setToast(true); setTimeout(() => setToast(false), 3000); }
   };
 
   return (
-    <View style={styles.container}>
+    <View className="flex-1 bg-surface pt-12">
       <Header title="My Cravings" showBack rightAction={
-        <TouchableOpacity>
-          <MaterialIcons name="favorite" size={24} color={Colors.primary} />
-        </TouchableOpacity>
+        <TouchableOpacity><MaterialIcons name="favorite" size={24} color="#f90680" /></TouchableOpacity>
       } />
 
-      <ScrollView
-        contentContainerStyle={styles.scrollContent}
-        showsVerticalScrollIndicator={false}
-      >
-        {/* Notify Partners Card */}
-        <View style={styles.notifyCard}>
+      <ScrollView contentContainerStyle={{ paddingHorizontal: 16 }} showsVerticalScrollIndicator={false}>
+        {/* Notify */}
+        <View className="bg-white rounded-3xl p-5 flex-row justify-between items-center mt-4 border border-line shadow-sm">
           <View>
-            <View style={styles.notifyHeader}>
-              <Text style={styles.notifyTitle}>Notify Partners</Text>
-              <MaterialIcons name="auto-awesome" size={18} color={Colors.primary} />
+            <View className="flex-row items-center gap-2">
+              <Text className="text-base font-bold text-content">Notify Partners</Text>
+              <MaterialIcons name="auto-awesome" size={18} color="#f90680" />
             </View>
-            <Text style={styles.notifySubtitle}>
-              Instantly share your desires with loved ones
-            </Text>
+            <Text className="text-xs text-content-secondary mt-0.5">Instantly share your desires with loved ones</Text>
           </View>
           <ToggleSwitch value={notifyPartners} onToggle={setNotifyPartners} />
         </View>
 
         {/* Categories */}
-        <Text style={styles.sectionTitle}>{"Feeling..."}</Text>
-        <ScrollView
-          horizontal
-          showsHorizontalScrollIndicator={false}
-          contentContainerStyle={styles.categoriesRow}
-        >
-          {categories.map((cat) => {
-            const isSelected = selectedCategory === cat.id;
+        <Text className="text-xl font-extrabold text-content tracking-tight mt-6 mb-3">{"Feeling..."}</Text>
+        <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={{ gap: 16, paddingVertical: 4 }}>
+          {categories.map((c) => {
+            const sel = selectedCat === c.id;
             return (
-              <TouchableOpacity
-                key={cat.id}
-                style={[styles.categoryItem, isSelected && styles.categoryItemSelected]}
-                onPress={() => setSelectedCategory(cat.id)}
-              >
-                <View style={[styles.categoryCircle, isSelected && styles.categoryCircleSelected]}>
-                  <MaterialIcons name={cat.icon} size={28} color={isSelected ? Colors.primary : Colors.textSecondary} />
+              <TouchableOpacity key={c.id} className="items-center gap-2" onPress={() => setSelectedCat(c.id)}>
+                <View className={`w-16 h-16 rounded-full items-center justify-center border-2 ${sel ? "border-brand bg-brand-light" : "border-line bg-white"}`}>
+                  <MaterialIcons name={c.icon as any} size={28} color={sel ? "#f90680" : "#8c5f75"} />
                 </View>
-                <Text style={[styles.categoryLabel, isSelected && styles.categoryLabelSelected]}>
-                  {cat.label}
-                </Text>
+                <Text className={`text-xs font-semibold ${sel ? "text-brand font-bold" : "text-content-secondary"}`}>{c.label}</Text>
               </TouchableOpacity>
             );
           })}
         </ScrollView>
 
-        {/* Cravings Grid */}
-        <View style={styles.cravingsHeader}>
-          <Text style={styles.sectionTitle}>{"Today's Desires"}</Text>
-          <TouchableOpacity>
-            <Text style={styles.clearAll}>Clear all</Text>
-          </TouchableOpacity>
+        {/* Grid */}
+        <View className="flex-row justify-between items-center mt-4">
+          <Text className="text-xl font-extrabold text-content tracking-tight">{"Today's Desires"}</Text>
+          <TouchableOpacity><Text className="text-sm font-bold text-brand">Clear all</Text></TouchableOpacity>
         </View>
 
-        <View style={styles.cravingsGrid}>
+        <View className="flex-row flex-wrap gap-4 mt-3">
           {cravingsData.map((item) => {
-            const isAdded = addedItems.includes(item.id);
+            const added = addedItems.includes(item.id);
             return (
-              <View key={item.id} style={styles.cravingCard}>
-                <View style={styles.cravingImagePlaceholder}>
-                  <MaterialIcons name={item.icon} size={48} color={Colors.primary} />
-                  <View style={styles.cravingBadge}>
-                    <MaterialIcons name={item.icon} size={14} color={Colors.primary} />
+              <View key={item.id} className="bg-white rounded-2xl overflow-hidden border border-line" style={{ width: cardW }}>
+                <View className="w-full h-36 bg-surface-soft items-center justify-center relative">
+                  <MaterialIcons name={item.icon as any} size={48} color="#f90680" />
+                  <View className="absolute top-2 right-2 w-7 h-7 rounded-full bg-white items-center justify-center shadow-sm">
+                    <MaterialIcons name={item.icon as any} size={14} color="#f90680" />
                   </View>
                 </View>
-                <Text style={styles.cravingName}>{item.name}</Text>
-                <Text style={styles.cravingDesc}>{item.description}</Text>
+                <Text className="text-base font-bold text-content px-3 pt-3">{item.name}</Text>
+                <Text className="text-xs text-content-secondary px-3 pt-0.5">{item.desc}</Text>
                 <TouchableOpacity
-                  style={[styles.addButton, isAdded && styles.addButtonActive]}
-                  onPress={() => toggleAddToList(item.id)}
+                  className={`flex-row items-center justify-center gap-1 mx-3 my-3 rounded-full py-2 ${added ? "bg-accent-green" : "bg-brand"}`}
+                  onPress={() => toggle(item.id)}
                 >
-                  <MaterialIcons
-                    name={isAdded ? "check" : "add"}
-                    size={16}
-                    color={isAdded ? Colors.white : Colors.white}
-                  />
-                  <Text style={styles.addButtonText}>
-                    {isAdded ? "Added" : "Add to List"}
-                  </Text>
+                  <MaterialIcons name={added ? "check" : "add"} size={16} color="#fff" />
+                  <Text className="text-white text-xs font-bold">{added ? "Added" : "Add to List"}</Text>
                 </TouchableOpacity>
               </View>
             );
           })}
         </View>
 
-        {/* Add Custom */}
+        {/* Custom */}
         <TouchableOpacity
-          style={styles.customButton}
+          className="flex-row items-center justify-center gap-2 bg-brand-light rounded-full py-4 mt-6 border border-dashed border-brand"
           onPress={() => router.push("/add-craving")}
         >
-          <MaterialIcons name="add-circle-outline" size={22} color={Colors.primary} />
-          <Text style={styles.customButtonText}>Add Custom Craving</Text>
+          <MaterialIcons name="add-circle-outline" size={22} color="#f90680" />
+          <Text className="text-base font-bold text-brand">Add Custom Craving</Text>
         </TouchableOpacity>
 
-        <View style={{ height: 40 }} />
+        <View className="h-10" />
       </ScrollView>
 
-      {/* Toast Notification */}
-      {showNotification && (
-        <View style={styles.toast}>
-          <MaterialIcons name="check-circle" size={20} color={Colors.green} />
-          <Text style={styles.toastText}>Partner notified!</Text>
-          <TouchableOpacity onPress={() => setShowNotification(false)}>
+      {toast && (
+        <View className="absolute bottom-8 left-4 right-4 flex-row items-center gap-2 bg-content/90 rounded-full px-5 py-3">
+          <MaterialIcons name="check-circle" size={20} color="#22c55e" />
+          <Text className="flex-1 text-white text-sm font-semibold">Partner notified!</Text>
+          <TouchableOpacity onPress={() => setToast(false)}>
             <MaterialIcons name="close" size={18} color="rgba(255,255,255,0.6)" />
           </TouchableOpacity>
         </View>
@@ -178,203 +125,3 @@ export default function CravingsScreen() {
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: Colors.background,
-    paddingTop: 50,
-  },
-  scrollContent: {
-    paddingHorizontal: Spacing.lg,
-  },
-  notifyCard: {
-    backgroundColor: Colors.white,
-    borderRadius: BorderRadius.xl,
-    padding: Spacing.xl,
-    flexDirection: "row",
-    justifyContent: "space-between",
-    alignItems: "center",
-    marginTop: Spacing.lg,
-    borderWidth: 1,
-    borderColor: Colors.border,
-    shadowColor: "#000",
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.05,
-    shadowRadius: 8,
-    elevation: 2,
-  },
-  notifyHeader: {
-    flexDirection: "row",
-    alignItems: "center",
-    gap: Spacing.sm,
-  },
-  notifyTitle: {
-    fontSize: FontSize.base,
-    fontWeight: FontWeight.bold,
-    color: Colors.text,
-  },
-  notifySubtitle: {
-    fontSize: FontSize.sm,
-    color: Colors.textSecondary,
-    marginTop: 2,
-  },
-  sectionTitle: {
-    fontSize: FontSize.xl,
-    fontWeight: FontWeight.extrabold,
-    color: Colors.text,
-    letterSpacing: -0.3,
-    marginTop: Spacing.xxl,
-    marginBottom: Spacing.md,
-  },
-  categoriesRow: {
-    gap: Spacing.lg,
-    paddingVertical: Spacing.sm,
-  },
-  categoryItem: {
-    alignItems: "center",
-    gap: Spacing.sm,
-  },
-  categoryItemSelected: {},
-  categoryCircle: {
-    width: 64,
-    height: 64,
-    borderRadius: 32,
-    backgroundColor: Colors.white,
-    alignItems: "center",
-    justifyContent: "center",
-    borderWidth: 2,
-    borderColor: Colors.border,
-  },
-  categoryCircleSelected: {
-    borderColor: Colors.primary,
-    backgroundColor: Colors.primaryLight,
-  },
-  categoryLabel: {
-    fontSize: FontSize.sm,
-    fontWeight: FontWeight.semibold,
-    color: Colors.textSecondary,
-  },
-  categoryLabelSelected: {
-    color: Colors.primary,
-    fontWeight: FontWeight.bold,
-  },
-  cravingsHeader: {
-    flexDirection: "row",
-    justifyContent: "space-between",
-    alignItems: "center",
-    marginTop: Spacing.lg,
-  },
-  clearAll: {
-    fontSize: FontSize.md,
-    fontWeight: FontWeight.bold,
-    color: Colors.primary,
-  },
-  cravingsGrid: {
-    flexDirection: "row",
-    flexWrap: "wrap",
-    gap: Spacing.lg,
-    marginTop: Spacing.md,
-  },
-  cravingCard: {
-    width: cardWidth,
-    backgroundColor: Colors.white,
-    borderRadius: BorderRadius.lg,
-    overflow: "hidden",
-    borderWidth: 1,
-    borderColor: Colors.border,
-  },
-  cravingImagePlaceholder: {
-    width: "100%",
-    height: 140,
-    backgroundColor: Colors.softPink,
-    alignItems: "center",
-    justifyContent: "center",
-    position: "relative",
-  },
-  cravingBadge: {
-    position: "absolute",
-    top: 8,
-    right: 8,
-    width: 28,
-    height: 28,
-    borderRadius: 14,
-    backgroundColor: Colors.white,
-    alignItems: "center",
-    justifyContent: "center",
-    shadowColor: "#000",
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.1,
-    shadowRadius: 4,
-    elevation: 2,
-  },
-  cravingName: {
-    fontSize: FontSize.base,
-    fontWeight: FontWeight.bold,
-    color: Colors.text,
-    paddingHorizontal: Spacing.md,
-    paddingTop: Spacing.md,
-  },
-  cravingDesc: {
-    fontSize: FontSize.sm,
-    color: Colors.textSecondary,
-    paddingHorizontal: Spacing.md,
-    paddingTop: 2,
-  },
-  addButton: {
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "center",
-    gap: Spacing.xs,
-    backgroundColor: Colors.primary,
-    marginHorizontal: Spacing.md,
-    marginVertical: Spacing.md,
-    borderRadius: BorderRadius.full,
-    paddingVertical: Spacing.sm,
-  },
-  addButtonActive: {
-    backgroundColor: Colors.green,
-  },
-  addButtonText: {
-    color: Colors.white,
-    fontSize: FontSize.sm,
-    fontWeight: FontWeight.bold,
-  },
-  customButton: {
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "center",
-    gap: Spacing.sm,
-    backgroundColor: Colors.primaryLight,
-    borderRadius: BorderRadius.full,
-    paddingVertical: Spacing.lg,
-    marginTop: Spacing.xxl,
-    borderWidth: 1,
-    borderStyle: "dashed",
-    borderColor: Colors.primary,
-  },
-  customButtonText: {
-    fontSize: FontSize.base,
-    fontWeight: FontWeight.bold,
-    color: Colors.primary,
-  },
-  toast: {
-    position: "absolute",
-    bottom: 30,
-    left: Spacing.lg,
-    right: Spacing.lg,
-    flexDirection: "row",
-    alignItems: "center",
-    gap: Spacing.sm,
-    backgroundColor: "rgba(24, 17, 20, 0.9)",
-    borderRadius: BorderRadius.full,
-    paddingHorizontal: Spacing.xl,
-    paddingVertical: Spacing.md,
-  },
-  toastText: {
-    flex: 1,
-    color: Colors.white,
-    fontSize: FontSize.md,
-    fontWeight: FontWeight.semibold,
-  },
-});

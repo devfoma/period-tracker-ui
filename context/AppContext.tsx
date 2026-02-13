@@ -1,35 +1,13 @@
 import React, { createContext, useContext, useState, useEffect, ReactNode } from "react";
 import AsyncStorage from "@react-native-async-storage/async-storage";
-import {
+import type {
+  AppState,
+  AppContextType,
   OnboardingData,
   DailyLog,
   Craving,
   Partner,
-  MoodType,
-  FlowIntensity,
-  SymptomType,
-} from "@/constants/types";
-
-type AppState = {
-  onboardingComplete: boolean;
-  onboardingData: OnboardingData;
-  dailyLogs: DailyLog[];
-  cravings: Craving[];
-  partners: Partner[];
-  userName: string;
-};
-
-type AppContextType = AppState & {
-  setOnboardingData: (data: Partial<OnboardingData>) => void;
-  completeOnboarding: () => void;
-  saveDailyLog: (log: DailyLog) => void;
-  getTodayLog: () => DailyLog | undefined;
-  addCraving: (craving: Craving) => void;
-  removeCraving: (id: string) => void;
-  addPartner: (partner: Partner) => void;
-  updatePartner: (id: string, data: Partial<Partner>) => void;
-  removePartner: (id: string) => void;
-};
+} from "@/types/interfaces";
 
 const defaultOnboarding: OnboardingData = {
   goal: null,
@@ -71,19 +49,17 @@ export function AppProvider({ children }: { children: ReactNode }) {
   const loadState = async () => {
     try {
       const stored = await AsyncStorage.getItem("hercircle_state");
-      if (stored) {
-        setState(JSON.parse(stored));
-      }
-    } catch (e) {
-      // Use defaults
+      if (stored) setState(JSON.parse(stored));
+    } catch {
+      /* use defaults */
     }
   };
 
   const saveState = async () => {
     try {
       await AsyncStorage.setItem("hercircle_state", JSON.stringify(state));
-    } catch (e) {
-      // Silent fail
+    } catch {
+      /* silent */
     }
   };
 
@@ -102,21 +78,18 @@ export function AppProvider({ children }: { children: ReactNode }) {
         ...prev.onboardingData,
         lastPeriodDate:
           prev.onboardingData.lastPeriodDate ||
-          new Date(Date.now() - 12 * 24 * 60 * 60 * 1000).toISOString().split("T")[0],
+          new Date(Date.now() - 12 * 86_400_000).toISOString().split("T")[0],
       },
     }));
   };
 
   const saveDailyLog = (log: DailyLog) => {
     setState((prev) => {
-      const existingIndex = prev.dailyLogs.findIndex((l) => l.date === log.date);
-      const newLogs = [...prev.dailyLogs];
-      if (existingIndex >= 0) {
-        newLogs[existingIndex] = log;
-      } else {
-        newLogs.push(log);
-      }
-      return { ...prev, dailyLogs: newLogs };
+      const idx = prev.dailyLogs.findIndex((l) => l.date === log.date);
+      const logs = [...prev.dailyLogs];
+      if (idx >= 0) logs[idx] = log;
+      else logs.push(log);
+      return { ...prev, dailyLogs: logs };
     });
   };
 
@@ -125,40 +98,31 @@ export function AppProvider({ children }: { children: ReactNode }) {
     return state.dailyLogs.find((l) => l.date === today);
   };
 
-  const addCraving = (craving: Craving) => {
-    setState((prev) => ({
-      ...prev,
-      cravings: [...prev.cravings, craving],
-    }));
-  };
+  const addCraving = (craving: Craving) =>
+    setState((p) => ({ ...p, cravings: [...p.cravings, craving] }));
 
-  const removeCraving = (id: string) => {
-    setState((prev) => ({
-      ...prev,
-      cravings: prev.cravings.filter((c) => c.id !== id),
-    }));
-  };
+  const removeCraving = (id: string) =>
+    setState((p) => ({ ...p, cravings: p.cravings.filter((c) => c.id !== id) }));
 
-  const addPartner = (partner: Partner) => {
-    setState((prev) => ({
-      ...prev,
-      partners: [...prev.partners, partner],
+  const toggleCravingList = (id: string) =>
+    setState((p) => ({
+      ...p,
+      cravings: p.cravings.map((c) =>
+        c.id === id ? { ...c, addedToList: !c.addedToList } : c
+      ),
     }));
-  };
 
-  const updatePartner = (id: string, data: Partial<Partner>) => {
-    setState((prev) => ({
-      ...prev,
-      partners: prev.partners.map((p) => (p.id === id ? { ...p, ...data } : p)),
-    }));
-  };
+  const addPartner = (partner: Partner) =>
+    setState((p) => ({ ...p, partners: [...p.partners, partner] }));
 
-  const removePartner = (id: string) => {
-    setState((prev) => ({
-      ...prev,
-      partners: prev.partners.filter((p) => p.id !== id),
+  const updatePartner = (id: string, data: Partial<Partner>) =>
+    setState((p) => ({
+      ...p,
+      partners: p.partners.map((pt) => (pt.id === id ? { ...pt, ...data } : pt)),
     }));
-  };
+
+  const removePartner = (id: string) =>
+    setState((p) => ({ ...p, partners: p.partners.filter((pt) => pt.id !== id) }));
 
   return (
     <AppContext.Provider
@@ -170,6 +134,7 @@ export function AppProvider({ children }: { children: ReactNode }) {
         getTodayLog,
         addCraving,
         removeCraving,
+        toggleCravingList,
         addPartner,
         updatePartner,
         removePartner,
@@ -181,9 +146,7 @@ export function AppProvider({ children }: { children: ReactNode }) {
 }
 
 export function useApp() {
-  const context = useContext(AppContext);
-  if (!context) {
-    throw new Error("useApp must be used within an AppProvider");
-  }
-  return context;
+  const ctx = useContext(AppContext);
+  if (!ctx) throw new Error("useApp must be inside AppProvider");
+  return ctx;
 }

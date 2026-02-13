@@ -1,46 +1,18 @@
 import React from "react";
-import { View, StyleSheet } from "react-native";
-import { Colors, Spacing } from "@/constants/theme";
-
-type ProgressDotsProps = {
-  total: number;
-  current: number;
-};
+import { View } from "react-native";
+import type { ProgressDotsProps } from "@/types/interfaces";
 
 export function ProgressDots({ total, current }: ProgressDotsProps) {
   return (
-    <View style={styles.container}>
+    <View className="flex-row items-center justify-center gap-2 py-2">
       {Array.from({ length: total }).map((_, i) => (
         <View
           key={i}
-          style={[
-            styles.dot,
-            i === current ? styles.activeDot : styles.inactiveDot,
-          ]}
+          className={`h-1.5 rounded-full ${
+            i === current ? "w-8 bg-brand" : "w-1.5 bg-brand-light"
+          }`}
         />
       ))}
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "center",
-    gap: Spacing.sm,
-    paddingVertical: Spacing.sm,
-  },
-  dot: {
-    height: 6,
-    borderRadius: 3,
-  },
-  activeDot: {
-    width: 32,
-    backgroundColor: Colors.primary,
-  },
-  inactiveDot: {
-    width: 6,
-    backgroundColor: Colors.primaryLight,
-  },
-});

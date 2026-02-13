@@ -1,14 +1,7 @@
 import React, { useState } from "react";
-import {
-  View,
-  Text,
-  StyleSheet,
-  TouchableOpacity,
-  ScrollView,
-} from "react-native";
+import { View, Text, TouchableOpacity, ScrollView } from "react-native";
 import { useRouter } from "expo-router";
 import { MaterialIcons } from "@expo/vector-icons";
-import { Colors, FontSize, FontWeight, Spacing, BorderRadius } from "@/constants/theme";
 import { Header } from "@/components/ui/Header";
 import { ProgressDots } from "@/components/ui/ProgressDots";
 import { Button } from "@/components/ui/Button";
@@ -34,22 +27,14 @@ export default function LastPeriodScreen() {
   ];
 
   const prevMonth = () => {
-    if (currentMonth === 0) {
-      setCurrentMonth(11);
-      setCurrentYear(currentYear - 1);
-    } else {
-      setCurrentMonth(currentMonth - 1);
-    }
+    if (currentMonth === 0) { setCurrentMonth(11); setCurrentYear(currentYear - 1); }
+    else setCurrentMonth(currentMonth - 1);
     setSelectedDay(null);
   };
 
   const nextMonth = () => {
-    if (currentMonth === 11) {
-      setCurrentMonth(0);
-      setCurrentYear(currentYear + 1);
-    } else {
-      setCurrentMonth(currentMonth + 1);
-    }
+    if (currentMonth === 11) { setCurrentMonth(0); setCurrentYear(currentYear + 1); }
+    else setCurrentMonth(currentMonth + 1);
     setSelectedDay(null);
   };
 
@@ -62,45 +47,43 @@ export default function LastPeriodScreen() {
   };
 
   return (
-    <View style={styles.container}>
+    <View className="flex-1 bg-surface pt-12">
       <Header showBack stepText="Step 2 of 5" />
       <ProgressDots total={5} current={1} />
 
-      <ScrollView
-        style={styles.content}
-        contentContainerStyle={styles.contentContainer}
-        showsVerticalScrollIndicator={false}
-      >
-        <Text style={styles.title}>When did your last period start?</Text>
-        <Text style={styles.subtitle}>
+      <ScrollView className="flex-1" contentContainerStyle={{ paddingHorizontal: 24 }} showsVerticalScrollIndicator={false}>
+        <Text className="text-3xl font-bold text-content text-center pt-8 tracking-tight">
+          When did your last period start?
+        </Text>
+        <Text className="text-base text-content/60 text-center mt-3 leading-6">
           Select the first day of your most recent cycle to help us track your health.
         </Text>
 
         {/* Calendar */}
-        <View style={styles.calendarContainer}>
-          <View style={styles.monthNav}>
-            <TouchableOpacity onPress={prevMonth} style={styles.navButton}>
-              <MaterialIcons name="chevron-left" size={28} color={Colors.primary} />
+        <View className="bg-brand-light/50 rounded-2xl p-4 mt-6 border border-line-light">
+          <View className="flex-row items-center justify-between mb-4">
+            <TouchableOpacity onPress={prevMonth} className="p-2">
+              <MaterialIcons name="chevron-left" size={28} color="#f90680" />
             </TouchableOpacity>
-            <Text style={styles.monthText}>
+            <Text className="text-lg font-bold text-content">
               {monthNames[currentMonth]} {currentYear}
             </Text>
-            <TouchableOpacity onPress={nextMonth} style={styles.navButton}>
-              <MaterialIcons name="chevron-right" size={28} color={Colors.primary} />
+            <TouchableOpacity onPress={nextMonth} className="p-2">
+              <MaterialIcons name="chevron-right" size={28} color="#f90680" />
             </TouchableOpacity>
           </View>
 
-          <View style={styles.daysHeader}>
-            {DAYS.map((day, i) => (
-              <Text key={i} style={styles.dayLabel}>
-                {day}
+          <View className="flex-row mb-2">
+            {DAYS.map((d, i) => (
+              <Text key={i} className="flex-1 text-center text-xs font-bold text-content/40 tracking-widest">
+                {d}
               </Text>
             ))}
           </View>
 
-          <View style={styles.daysGrid}>
+          <View className="flex-row flex-wrap">
             {Array.from({ length: firstDay }).map((_, i) => (
-              <View key={`empty-${i}`} style={styles.dayCell} />
+              <View key={`e-${i}`} className="w-[14.28%] h-12 items-center justify-center" />
             ))}
             {Array.from({ length: daysInMonth }).map((_, i) => {
               const day = i + 1;
@@ -108,24 +91,11 @@ export default function LastPeriodScreen() {
               return (
                 <TouchableOpacity
                   key={day}
-                  style={styles.dayCell}
-                  onPress={() => {
-                    setSelectedDay(day);
-                    setDontRemember(false);
-                  }}
+                  className="w-[14.28%] h-12 items-center justify-center"
+                  onPress={() => { setSelectedDay(day); setDontRemember(false); }}
                 >
-                  <View
-                    style={[
-                      styles.dayCircle,
-                      isSelected && styles.dayCircleSelected,
-                    ]}
-                  >
-                    <Text
-                      style={[
-                        styles.dayText,
-                        isSelected && styles.dayTextSelected,
-                      ]}
-                    >
+                  <View className={`w-10 h-10 rounded-full items-center justify-center ${isSelected ? "bg-brand shadow-lg shadow-brand/40" : ""}`}>
+                    <Text className={`text-sm font-medium ${isSelected ? "text-white" : "text-content"}`}>
                       {day}
                     </Text>
                   </View>
@@ -135,155 +105,23 @@ export default function LastPeriodScreen() {
           </View>
         </View>
 
-        {/* Don't remember toggle */}
-        <View style={styles.toggleRow}>
-          <View style={styles.toggleLeft}>
-            <MaterialIcons
-              name="help-outline"
-              size={22}
-              color={Colors.primaryMuted}
-            />
-            <Text style={styles.toggleText}>I don't remember</Text>
+        {/* Don't remember */}
+        <View className="flex-row items-center justify-between bg-brand-light/50 rounded-2xl px-6 py-4 mt-8 border border-brand-light/50">
+          <View className="flex-row items-center gap-3">
+            <MaterialIcons name="help-outline" size={22} color="rgba(249,6,128,0.6)" />
+            <Text className="text-base font-medium text-content">{"I don't remember"}</Text>
           </View>
-          <ToggleSwitch
-            value={dontRemember}
-            onToggle={(val) => setDontRemember(val)}
-          />
+          <ToggleSwitch value={dontRemember} onToggle={setDontRemember} />
         </View>
       </ScrollView>
 
-      <View style={styles.footer}>
+      <View className="px-6 pb-10">
         <Button
           title="Next"
           onPress={handleNext}
-          icon={
-            <MaterialIcons name="arrow-forward" size={20} color={Colors.white} />
-          }
+          icon={<MaterialIcons name="arrow-forward" size={20} color="#fff" />}
         />
       </View>
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: Colors.background,
-    paddingTop: 50,
-  },
-  content: {
-    flex: 1,
-  },
-  contentContainer: {
-    paddingHorizontal: Spacing.xxl,
-  },
-  title: {
-    fontSize: 32,
-    fontWeight: FontWeight.bold,
-    color: Colors.text,
-    textAlign: "center",
-    paddingTop: Spacing.xxxl,
-    letterSpacing: -0.5,
-  },
-  subtitle: {
-    fontSize: FontSize.base,
-    color: "rgba(24, 17, 20, 0.6)",
-    textAlign: "center",
-    marginTop: Spacing.md,
-    lineHeight: 22,
-  },
-  calendarContainer: {
-    backgroundColor: "rgba(249, 6, 128, 0.05)",
-    borderRadius: BorderRadius.lg,
-    padding: Spacing.lg,
-    marginTop: Spacing.xxl,
-    borderWidth: 1,
-    borderColor: Colors.borderLight,
-  },
-  monthNav: {
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "space-between",
-    marginBottom: Spacing.lg,
-  },
-  navButton: {
-    padding: Spacing.sm,
-    borderRadius: BorderRadius.full,
-  },
-  monthText: {
-    fontSize: FontSize.lg,
-    fontWeight: FontWeight.bold,
-    color: Colors.text,
-  },
-  daysHeader: {
-    flexDirection: "row",
-    marginBottom: Spacing.sm,
-  },
-  dayLabel: {
-    flex: 1,
-    textAlign: "center",
-    fontSize: 13,
-    fontWeight: FontWeight.bold,
-    color: "rgba(24, 17, 20, 0.4)",
-    letterSpacing: 1,
-  },
-  daysGrid: {
-    flexDirection: "row",
-    flexWrap: "wrap",
-  },
-  dayCell: {
-    width: "14.28%",
-    height: 48,
-    alignItems: "center",
-    justifyContent: "center",
-  },
-  dayCircle: {
-    width: 40,
-    height: 40,
-    borderRadius: 20,
-    alignItems: "center",
-    justifyContent: "center",
-  },
-  dayCircleSelected: {
-    backgroundColor: Colors.primary,
-    shadowColor: Colors.primary,
-    shadowOffset: { width: 0, height: 4 },
-    shadowOpacity: 0.4,
-    shadowRadius: 8,
-    elevation: 5,
-  },
-  dayText: {
-    fontSize: FontSize.md,
-    fontWeight: FontWeight.medium,
-    color: Colors.text,
-  },
-  dayTextSelected: {
-    color: Colors.white,
-  },
-  toggleRow: {
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "space-between",
-    backgroundColor: "rgba(249, 6, 128, 0.05)",
-    borderRadius: BorderRadius.lg,
-    paddingHorizontal: Spacing.xxl,
-    paddingVertical: Spacing.lg,
-    marginTop: Spacing.xxxl,
-    borderWidth: 1,
-    borderColor: "rgba(249, 6, 128, 0.05)",
-  },
-  toggleLeft: {
-    flexDirection: "row",
-    alignItems: "center",
-    gap: Spacing.md,
-  },
-  toggleText: {
-    fontSize: FontSize.base,
-    fontWeight: FontWeight.medium,
-    color: Colors.text,
-  },
-  footer: {
-    padding: Spacing.xxl,
-    paddingBottom: 40,
-  },
-});

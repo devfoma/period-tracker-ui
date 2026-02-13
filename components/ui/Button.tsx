@@ -1,28 +1,25 @@
 import React from "react";
-import {
-  TouchableOpacity,
-  Text,
-  StyleSheet,
-  ViewStyle,
-  TextStyle,
-  ActivityIndicator,
-} from "react-native";
-import { Colors, BorderRadius, FontSize, FontWeight, Spacing } from "@/constants/theme";
+import { TouchableOpacity, Text, ActivityIndicator } from "react-native";
+import type { ButtonProps } from "@/types/interfaces";
 
-type ButtonVariant = "primary" | "secondary" | "ghost" | "outline";
-type ButtonSize = "sm" | "md" | "lg";
+const variantClasses: Record<string, string> = {
+  primary: "bg-brand shadow-lg shadow-brand/30",
+  secondary: "bg-brand-light",
+  ghost: "bg-transparent",
+  outline: "bg-transparent border-2 border-brand",
+};
 
-type ButtonProps = {
-  title: string;
-  onPress: () => void;
-  variant?: ButtonVariant;
-  size?: ButtonSize;
-  disabled?: boolean;
-  loading?: boolean;
-  icon?: React.ReactNode;
-  style?: ViewStyle;
-  textStyle?: TextStyle;
-  fullWidth?: boolean;
+const variantText: Record<string, string> = {
+  primary: "text-content-inverse text-lg",
+  secondary: "text-brand text-base",
+  ghost: "text-content-secondary text-base",
+  outline: "text-brand text-base",
+};
+
+const sizeClasses: Record<string, string> = {
+  sm: "h-10 px-4",
+  md: "h-12 px-5",
+  lg: "h-14 px-6",
 };
 
 export function Button({
@@ -33,120 +30,28 @@ export function Button({
   disabled = false,
   loading = false,
   icon,
-  style,
-  textStyle,
-  fullWidth = true,
+  className = "",
+  textClassName = "",
 }: ButtonProps) {
-  const buttonStyles = [
-    styles.base,
-    styles[variant],
-    styles[`size_${size}`],
-    fullWidth && styles.fullWidth,
-    disabled && styles.disabled,
-    style,
-  ];
-
-  const textStyles = [
-    styles.text,
-    styles[`text_${variant}`],
-    styles[`textSize_${size}`],
-    disabled && styles.textDisabled,
-    textStyle,
-  ];
-
   return (
     <TouchableOpacity
-      style={buttonStyles}
+      className={`flex-row items-center justify-center gap-2 rounded-full w-full
+        ${variantClasses[variant]} ${sizeClasses[size]}
+        ${disabled ? "opacity-50" : ""} ${className}`}
       onPress={onPress}
       disabled={disabled || loading}
       activeOpacity={0.85}
     >
       {loading ? (
-        <ActivityIndicator color={variant === "primary" ? Colors.white : Colors.primary} />
+        <ActivityIndicator color={variant === "primary" ? "#fff" : "#f90680"} />
       ) : (
         <>
           {icon}
-          <Text style={textStyles}>{title}</Text>
+          <Text className={`font-bold ${variantText[variant]} ${textClassName}`}>
+            {title}
+          </Text>
         </>
       )}
     </TouchableOpacity>
   );
 }
-
-const styles = StyleSheet.create({
-  base: {
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "center",
-    gap: Spacing.sm,
-    borderRadius: BorderRadius.full,
-  },
-  fullWidth: {
-    width: "100%",
-  },
-  primary: {
-    backgroundColor: Colors.primary,
-    shadowColor: Colors.primary,
-    shadowOffset: { width: 0, height: 8 },
-    shadowOpacity: 0.3,
-    shadowRadius: 16,
-    elevation: 8,
-  },
-  secondary: {
-    backgroundColor: Colors.primaryLight,
-  },
-  ghost: {
-    backgroundColor: "transparent",
-  },
-  outline: {
-    backgroundColor: "transparent",
-    borderWidth: 2,
-    borderColor: Colors.primary,
-  },
-  size_sm: {
-    height: 40,
-    paddingHorizontal: Spacing.lg,
-  },
-  size_md: {
-    height: 48,
-    paddingHorizontal: Spacing.xl,
-  },
-  size_lg: {
-    height: 56,
-    paddingHorizontal: Spacing.xxl,
-  },
-  disabled: {
-    opacity: 0.5,
-  },
-  text: {
-    fontWeight: FontWeight.bold,
-  },
-  text_primary: {
-    color: Colors.white,
-    fontSize: FontSize.lg,
-  },
-  text_secondary: {
-    color: Colors.primary,
-    fontSize: FontSize.base,
-  },
-  text_ghost: {
-    color: Colors.textSecondary,
-    fontSize: FontSize.base,
-  },
-  text_outline: {
-    color: Colors.primary,
-    fontSize: FontSize.base,
-  },
-  textSize_sm: {
-    fontSize: FontSize.md,
-  },
-  textSize_md: {
-    fontSize: FontSize.base,
-  },
-  textSize_lg: {
-    fontSize: FontSize.lg,
-  },
-  textDisabled: {
-    opacity: 0.5,
-  },
-});

@@ -1,4 +1,4 @@
-import { CyclePhase } from "@/constants/types";
+import type { CyclePhase } from "@/types/interfaces";
 
 export function getCycleDay(lastPeriodDate: string, cycleLength: number): number {
   const start = new Date(lastPeriodDate);
